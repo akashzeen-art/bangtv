@@ -1,0 +1,1164 @@
+.newest-movies-section {
+  min-height: 100px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  border-radius: 12px;
+  outline: 1px solid rgba(255, 215, 0, 0.2);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 1px rgba(255, 215, 0, 0.1), 
+              0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.border-gray-3200 {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Center Newest Movies Text */
+.newest-movies-section .tab-nav__v9 {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 0 !important;
+}
+
+.newest-movies-section .tab-nav__v9 h3 {
+  text-align: center !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Tab Navigation Styling */
+.newest-tab-link {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 8px 20px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.newest-tab-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-red));
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 20px;
+}
+
+.newest-tab-link:hover {
+  color: white;
+  transform: translateY(-2px);
+}
+
+.newest-tab-link:hover::before {
+  opacity: 0.2;
+}
+
+.newest-tab-link.active {
+  color: white;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-red));
+  box-shadow: 0 4px 12px var(--shadow-mixed);
+}
+
+.newest-tab-link.active::before {
+  opacity: 1;
+}
+
+/* Featured Movie Image */
+.newest-featured-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 270px;
+  height: 152px;
+  min-width: 270px;
+  min-height: 152px;
+  max-width: 270px;
+  max-height: 152px;
+}
+
+.newest-featured-image:hover {
+  transform: scale(1.02);
+}
+
+.newest-featured-image img {
+  width: 270px;
+  height: 152px;
+  min-width: 270px;
+  min-height: 152px;
+  max-width: 270px;
+  max-height: 152px;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+}
+
+.newest-featured-image:hover img {
+  transform: scale(1.05);
+}
+
+.newest-featured-image .play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.7) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+  pointer-events: none;
+  border-radius: 12px;
+}
+
+.newest-featured-image:hover .play-overlay {
+  opacity: 1;
+}
+
+.newest-featured-image .play-button {
+  width: 70px;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0.8);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.newest-featured-image:hover .play-button {
+  transform: scale(1);
+  background: rgba(255, 255, 255, 0.35);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.newest-featured-title {
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.newest-featured-title:hover {
+  color: var(--secondary-red) !important;
+}
+
+.text-gray-1800 {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.line-height-lg {
+  line-height: 1.2;
+}
+
+.font-size-19 {
+  font-size: 1.1875rem;
+  line-height: 1.1;
+}
+
+.font-size-14 {
+  font-size: 0.875rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+
+.newest-movies-section .mb-3 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
+.pb-3 {
+  padding-bottom: 0.75rem;
+}
+
+.newest-movies-section .pb-3 {
+  padding-bottom: 0.5rem;
+}
+
+.pb-2d {
+  padding-bottom: 0.5rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+/* Red color for genre links */
+.h-g-primary {
+  color: var(--secondary-red);
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.h-g-primary:hover {
+  color: var(--primary-color);
+}
+
+/* Movie List Items */
+.newest-movies-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.newest-movie-item {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.newest-movie-item:hover {
+  transform: translateX(5px);
+}
+
+.newest-movie-product {
+  padding-bottom: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+  line-height: 1.1 !important;
+}
+
+.newest-movie-product .row {
+  display: flex;
+  align-items: center;
+}
+
+.newest-movie-product .col-auto {
+  display: flex;
+  justify-content: center;
+}
+
+.newest-movie-product .col.d-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.newest-movie-product .my-auto.pl-lg-3d {
+  text-align: center;
+  width: 100%;
+}
+
+.newest-movie-item .product-title {
+  margin-bottom: 0.375rem !important;
+  line-height: 1.1 !important;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.newest-movie-item .product-title a {
+  line-height: 1.1 !important;
+  text-align: center;
+}
+
+.newest-movie-item .product-meta {
+  margin-bottom: 0.25rem !important;
+  line-height: 1.1 !important;
+  text-align: center;
+}
+
+.newest-movie-item span.d-inline-block {
+  line-height: 1.1 !important;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+.newest-movie-item span.d-inline-block {
+  margin-bottom: 0.25rem !important;
+}
+
+/* Reduce line spacing for featured section */
+.newest-movies-section .product-meta {
+  line-height: 1.1 !important;
+}
+
+.newest-movies-section .product-title {
+  line-height: 1.1 !important;
+}
+
+.newest-movies-section .text-gray-1800 {
+  line-height: 1.2 !important;
+}
+
+.newest-movies-section .font-size-12 {
+  line-height: 1.1 !important;
+}
+
+.newest-movie-item .mb-1 {
+  margin-bottom: 0.125rem !important;
+}
+
+.newest-movie-item .mb-2 {
+  margin-bottom: 0.375rem !important;
+}
+
+.newest-movies-section .mb-4 {
+  margin-bottom: 0.75rem;
+}
+
+.newest-movie-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.newest-movie-image:hover {
+  transform: scale(1.05);
+}
+
+.newest-movie-image img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+}
+
+.newest-movie-image:hover img {
+  transform: scale(1.08);
+}
+
+.newest-movie-title {
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.newest-movie-title:hover {
+  color: var(--secondary-red) !important;
+}
+
+/* 3x4 Grid Layout for Newest Movies */
+.newest-movies-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.newest-movies-grid .col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.newest-movies-grid .product {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.newest-movies-grid .product-image-landscape {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 270px;
+  height: 152px;
+  min-width: 270px;
+  min-height: 152px;
+  max-width: 270px;
+  max-height: 152px;
+}
+
+.newest-movies-grid .product-image-landscape .product-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 270px;
+  height: 152px;
+  min-width: 270px;
+  min-height: 152px;
+  max-width: 270px;
+  max-height: 152px;
+}
+
+.newest-movies-grid .product-image-landscape img {
+  margin: 0 auto !important;
+  display: block !important;
+  max-width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.newest-movies-grid .product-title {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.newest-movies-grid .product-title-link {
+  text-align: center;
+  display: block;
+}
+
+.newest-movies-grid .text-gray-1300 {
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+/* Desktop - 3 Column Grid */
+@media (min-width: 992px) {
+  .newest-movies-grid .row-cols-md-3 > * {
+    flex: 0 0 calc(33.333% - 40px);
+    max-width: calc(33.333% - 40px);
+    min-width: 300px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .newest-movies-grid .product {
+    max-width: 300px;
+    min-width: 270px;
+  }
+
+  .newest-movies-grid .product-image-landscape {
+    width: 270px;
+    height: 152px;
+    min-width: 270px;
+    min-height: 152px;
+    max-width: 270px;
+    max-height: 152px;
+  }
+
+  .newest-movies-grid .product-image-landscape .product-link {
+    width: 270px;
+    height: 152px;
+    min-width: 270px;
+    min-height: 152px;
+    max-width: 270px;
+    max-height: 152px;
+  }
+
+  .newest-movies-grid .product-image-landscape img {
+    width: 270px;
+    height: 152px;
+    min-width: 270px;
+    min-height: 152px;
+    max-width: 270px;
+    max-height: 152px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+}
+
+/* Tablet - 2 Column Grid */
+@media (min-width: 576px) and (max-width: 991px) {
+  .newest-movies-grid .row-cols-md-3 > * {
+    flex: 0 0 calc(50% - 20px) !important;
+    max-width: calc(50% - 20px) !important;
+    min-width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .newest-movies-grid .product-image-landscape {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .newest-movies-grid .product-image-landscape img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    max-width: 100%;
+  }
+}
+
+/* Mobile - 1 Column Grid (12x1) */
+@media (max-width: 768px) {
+  .newest-movies-grid .row-cols-md-3 > * {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-bottom: 30px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .newest-movies-grid {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .newest-movies-grid .product-image-landscape {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    margin-bottom: 10px;
+  }
+
+  .newest-movies-grid .product-image-landscape img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    max-width: 100%;
+  }
+}
+
+.max-w-23rem {
+  max-width: 23rem;
+}
+
+.max-w-9rem-lg {
+  max-width: 9rem;
+}
+
+@media (min-width: 992px) {
+  .max-w-9rem-lg {
+    max-width: 9rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .column-count-2 {
+    column-count: 1;
+  }
+  
+  .newest-tab-link {
+    padding: 6px 16px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .newest-movies-section {
+    padding: 20px 15px !important;
+  }
+
+  /* Fix main row container */
+  .newest-movies-section .row {
+    margin: 0 !important;
+  }
+
+  /* Stack featured movie section on mobile */
+  .newest-movies-section .row > .col-auto {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+    margin-bottom: 20px;
+    padding: 0 !important;
+  }
+
+  .newest-movies-section .row > .col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+    padding: 0 !important;
+  }
+
+  .newest-featured-image {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto;
+  }
+
+  .newest-featured-image img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+  }
+
+  .newest-featured-image .play-button {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    min-height: 60px;
+  }
+  
+  .newest-featured-image .play-button svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .font-size-19 {
+    font-size: 1.1rem;
+    line-height: 1.1;
+  }
+  
+  .font-size-22 {
+    font-size: 1.2rem;
+    line-height: 1.1;
+  }
+
+  .newest-movies-section .d-md-flex {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .newest-movies-section .btn {
+    width: 100%;
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+
+  /* Single column layout for movie list on mobile */
+  .newest-movies-grid .row-cols-md-3 > * {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-bottom: 25px !important;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .newest-movies-grid {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .newest-movie-product {
+    width: 100% !important;
+    padding-bottom: 15px !important;
+    margin-bottom: 15px !important;
+  }
+
+  .newest-movie-item .row {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start;
+    margin: 0 !important;
+    width: 100%;
+  }
+
+  .newest-movie-item .col-auto {
+    flex: none !important;
+    width: auto !important;
+    margin-right: 15px;
+    padding: 0 !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  .newest-movie-item .col.d-flex {
+    flex: 1 !important;
+    width: auto !important;
+    padding: 0 !important;
+    justify-content: center;
+  }
+
+  .newest-movie-product .row {
+    justify-content: center;
+  }
+
+  .newest-movie-product .my-auto.pl-lg-3d {
+    text-align: center !important;
+    width: 100%;
+  }
+
+  .newest-movie-image {
+    width: 90px !important;
+    max-width: 90px !important;
+    flex-shrink: 0;
+  }
+
+  .newest-movie-image img {
+    width: 90px !important;
+    height: 135px !important;
+    object-fit: cover;
+  }
+
+  .newest-movie-title {
+    font-size: 14px !important;
+    line-height: 1.1 !important;
+    margin-bottom: 8px !important;
+    text-align: center !important;
+  }
+
+  .newest-movie-item .product-meta {
+    font-size: 12px !important;
+    line-height: 1.1 !important;
+    margin-bottom: 5px !important;
+    text-align: center !important;
+  }
+
+  .newest-movie-item .product-title {
+    line-height: 1.1 !important;
+    text-align: center !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  .newest-movie-item span.d-inline-block {
+    line-height: 1.1 !important;
+    text-align: center !important;
+    display: block;
+    width: 100%;
+  }
+
+  .newest-movie-item .font-size-12 {
+    font-size: 11px !important;
+  }
+}
+
+/* Additional Responsive Design */
+@media (max-width: 1024px) {
+  .newest-movies-section {
+    padding: 50px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .newest-movies-section {
+    padding: 15px 10px !important;
+  }
+
+  .display-7 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  .newest-tab-link {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    min-height: 44px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Featured movie section - stack on mobile */
+  .newest-movies-section .row > .col-auto {
+    width: 100% !important;
+    margin-bottom: 20px;
+    padding: 0;
+  }
+
+  .newest-movies-section .row > .col.d-flex {
+    width: 100% !important;
+    padding: 0;
+  }
+
+  .newest-featured-image {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto 20px;
+  }
+
+  .newest-featured-image img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .newest-featured-image .play-button {
+    width: 55px;
+    height: 55px;
+    min-width: 55px;
+    min-height: 55px;
+  }
+
+  .newest-featured-image .play-button svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .font-size-19 {
+    font-size: 1rem;
+    line-height: 1.1;
+  }
+
+  .font-size-22 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .font-size-14 {
+    font-size: 0.85rem;
+    line-height: 1.2;
+  }
+
+  .newest-movies-section .d-md-flex {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .newest-movies-section .btn {
+    width: 100%;
+    min-height: 44px;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Single column layout for movie list on mobile */
+  .newest-movies-grid .row-cols-md-3 > * {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-bottom: 20px !important;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .newest-movies-grid {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .newest-movie-item .row {
+    flex-direction: row !important;
+    align-items: flex-start;
+    margin: 0 !important;
+  }
+
+  .newest-movie-item .col-auto {
+    flex: none !important;
+    width: auto !important;
+    margin-right: 12px;
+    padding: 0 !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  .newest-movie-item .col {
+    flex: 1 !important;
+    padding: 0 !important;
+  }
+
+  .newest-movie-product .row {
+    justify-content: center;
+  }
+
+  .newest-movie-item .col.d-flex {
+    justify-content: center;
+  }
+
+  .newest-movie-product .my-auto.pl-lg-3d {
+    text-align: center !important;
+    width: 100%;
+  }
+
+  .newest-movie-image {
+    max-width: 80px;
+    flex-shrink: 0;
+    width: 80px;
+  }
+
+  .newest-movie-image img {
+    width: 80px !important;
+    height: 120px !important;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  .newest-movie-title {
+    font-size: 13px !important;
+    font-weight: 700;
+    line-height: 1.1 !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 6px !important;
+    text-align: center !important;
+  }
+
+  .newest-movie-item .product-meta {
+    font-size: 11px !important;
+    line-height: 1.1 !important;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 4px !important;
+    text-align: center !important;
+  }
+
+  .newest-movie-item .product-title {
+    line-height: 1.1 !important;
+    text-align: center !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  .newest-movie-item span.d-inline-block {
+    line-height: 1.1 !important;
+    text-align: center !important;
+    display: block;
+    width: 100%;
+  }
+
+  .newest-movie-item .font-size-12 {
+    font-size: 10px !important;
+  }
+
+  .newest-movie-item .play-button {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
+  }
+
+  .newest-movie-item .play-button svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .newest-movies-section {
+    padding: 25px 10px !important;
+  }
+
+  .display-7 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+
+  .newest-tab-link {
+    padding: 7px 14px;
+    font-size: 0.85rem;
+    min-height: 44px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Featured movie section - full width on small mobile */
+  .newest-movies-section .row > .col-auto {
+    width: 100% !important;
+    margin-bottom: 16px;
+    padding: 0;
+  }
+
+  .newest-movies-section .row > .col.d-flex {
+    width: 100% !important;
+    padding: 0;
+  }
+
+  .newest-featured-image {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto 16px;
+  }
+
+  .newest-featured-image img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+    aspect-ratio: 214 / 120;
+    border-radius: 8px;
+  }
+
+  .newest-featured-image .play-button {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
+  }
+
+  .newest-featured-image .play-button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .font-size-19 {
+    font-size: 0.95rem;
+    line-height: 1.1;
+  }
+
+  .font-size-22 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .font-size-14 {
+    font-size: 0.8rem;
+    line-height: 1.2;
+  }
+
+  .newest-movies-section .d-md-flex {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .newest-movies-section .btn {
+    width: 100%;
+    min-height: 44px;
+    padding: 11px 18px;
+    font-size: 0.85rem;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* 2-column layout for movie list on small mobile */
+  .column-count-2 {
+    column-count: 2 !important;
+    column-gap: 0.5rem;
+  }
+
+  /* Perfect phone layout for newest movies */
+  .newest-movies-list {
+    padding: 0;
+    margin: 0;
+  }
+
+  .newest-movie-item {
+    margin-bottom: 10px;
+    width: 100%;
+    break-inside: avoid;
+  }
+
+  .newest-movie-item .product {
+    width: 100%;
+    padding-bottom: 0.5rem;
+  }
+  
+  .newest-movie-product {
+    padding-bottom: 0.375rem !important;
+    margin-bottom: 0.375rem !important;
+  }
+
+  .newest-movie-item .row {
+    flex-direction: row !important;
+    align-items: flex-start;
+    margin: 0;
+  }
+
+  .newest-movie-image {
+    width: 70px;
+    max-width: 70px;
+    flex-shrink: 0;
+  }
+
+  .newest-movie-image img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 110 / 165;
+    border-radius: 6px;
+  }
+
+  .newest-movie-item .col {
+    flex: 1;
+    padding-left: 10px;
+  }
+
+  .newest-movie-item .col.d-flex {
+    justify-content: center;
+  }
+
+  .newest-movie-product .my-auto.pl-lg-3d {
+    text-align: center !important;
+    width: 100%;
+  }
+
+  .newest-movie-title {
+    font-size: 0.8rem;
+    line-height: 1.1 !important;
+    font-weight: 700;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-align: center !important;
+  }
+
+  .newest-movie-item .product-meta {
+    font-size: 0.65rem;
+    line-height: 1.1 !important;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center !important;
+  }
+
+  .newest-movie-item .product-title {
+    line-height: 1.1 !important;
+    text-align: center !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  .newest-movie-item span.d-inline-block {
+    line-height: 1.1 !important;
+    text-align: center !important;
+    display: block;
+    width: 100%;
+  }
+
+  .newest-movie-item .font-size-12 {
+    font-size: 0.65rem;
+  }
+
+  .newest-movie-item .play-button {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+  }
+
+  .newest-movie-item .play-button svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+

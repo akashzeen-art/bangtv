@@ -1,0 +1,1200 @@
+.movies-carousel-section {
+  padding: 60px 0;
+}
+
+.tab-nav__v1 {
+  margin-bottom: 30px;
+}
+
+.tab-nav__v1 .nav {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 20px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.tab-nav__v1 .nav-item {
+  margin: 0;
+}
+
+.tab-nav__v1 .nav-link {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 15px 30px;
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.tab-nav__v1 .nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: var(--bg-gradient);
+  transform: translateX(-50%);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab-nav__v1 .nav-link:hover {
+  color: white;
+  transform: translateY(-2px);
+}
+
+.tab-nav__v1 .nav-link:hover::before {
+  width: 80%;
+}
+
+.tab-nav__v1 .nav-link.active {
+  color: white;
+  border-bottom-color: var(--secondary-color);
+}
+
+.tab-nav__v1 .nav-link.active::before {
+  width: 100%;
+}
+
+.tab-content {
+  margin-top: 30px;
+  position: relative;
+}
+
+.tab-pane {
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.tab-pane.fade {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.tab-pane.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slick-gutters-2 .slick-slide {
+  padding: 0 10px;
+}
+
+.space-2 {
+  padding: 60px 0;
+}
+
+.mt-11 {
+  margin-top: 3rem;
+}
+
+/* Romantic Header Section Enhancements */
+.romantic-header {
+  position: relative;
+  padding-left: 20px;
+}
+
+.centered-header {
+  padding-left: 0 !important;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.centered-header .romantic-title {
+  text-align: center !important;
+  margin: 0 auto !important;
+  width: 100%;
+  display: block;
+}
+
+.movies-carousel-section .centered-header h3 {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.romantic-title {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+  color: #949cb0 !important;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.romantic-header:hover .romantic-title {
+  color: white !important;
+}
+
+/* View All Link Enhancement */
+.view-all-link-romantic {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  color: #949cb0 !important;
+}
+
+.view-all-link-romantic:hover {
+  color: white !important;
+  transform: translateX(5px);
+}
+
+.view-all-link-romantic .arrow-icon-romantic {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.view-all-link-romantic:hover .arrow-icon-romantic {
+  transform: translateX(3px);
+}
+
+/* Carousel Product Enhancements */
+.carousel-product {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  padding: 0 10px;
+}
+
+.carousel-product:hover {
+  transform: translateY(-10px) translateZ(0);
+}
+
+.movies-carousel-section .product-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #2a0f0f;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.movies-carousel-section .product-image-portrait {
+  aspect-ratio: 2 / 3;
+}
+
+.movies-carousel-section .product-image-landscape {
+  width: 270px;
+  height: 152px;
+  min-width: 270px;
+  min-height: 152px;
+  max-width: 270px;
+  max-height: 152px;
+  aspect-ratio: 16 / 9;
+}
+
+.movies-carousel-section .product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+  will-change: transform;
+}
+
+.movies-carousel-section .carousel-product:hover .product-image img {
+  transform: scale(1.1) translateZ(0);
+}
+
+/* Play Overlay for Carousel */
+.movies-carousel-section .play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 270px;
+  height: 152px;
+  min-width: 270px;
+  min-height: 152px;
+  max-width: 270px;
+  max-height: 152px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.7) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+  pointer-events: none;
+  border-radius: 12px;
+}
+
+.movies-carousel-section .carousel-product:hover .play-overlay {
+  opacity: 1;
+}
+
+.movies-carousel-section .play-button {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0.8);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.movies-carousel-section .carousel-product:hover .play-button {
+  transform: scale(1);
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.movies-carousel-section .play-button svg {
+  width: 24px;
+  height: 24px;
+  margin-left: 3px;
+}
+
+/* Product Meta Styling for Carousel */
+.movies-carousel-section .product-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.movies-carousel-section .product-meta .meta-item {
+  position: relative;
+  padding-right: 8px;
+}
+
+.movies-carousel-section .product-meta .meta-item:not(:last-child)::after {
+  content: ",";
+  position: absolute;
+  right: 2px;
+  color: #949cb0;
+  font-weight: normal;
+}
+
+.movies-carousel-section .product-meta .meta-item:last-child::after {
+  display: none;
+}
+
+.movies-carousel-section .product-meta a {
+  color: var(--secondary-color);
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.movies-carousel-section .product-meta a:hover {
+  color: var(--primary-color);
+}
+
+/* Product Title Styling for Carousel */
+.movies-carousel-section .product-title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-top: 8px;
+  min-height: 40px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.movies-carousel-section .product-title-link {
+  color: white;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movies-carousel-section .product-title-link:hover {
+  color: var(--secondary-color);
+}
+
+/* Slick Slider Customization for Carousel */
+.movies-carousel-section .slick-wrapper {
+  position: relative;
+  padding: 0 60px;
+}
+
+.movies-carousel-section .slick-slider {
+  position: relative;
+}
+
+.movies-carousel-section .slick-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, background, border-color;
+  font-size: 0;
+  line-height: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+.movies-carousel-section .slick-arrow::before {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-top: 3px solid white;
+  border-right: 3px solid white;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.movies-carousel-section .slick-prev {
+  left: 10px;
+}
+
+.movies-carousel-section .slick-prev::before {
+  transform: rotate(-135deg);
+  margin-right: 2px;
+}
+
+.movies-carousel-section .slick-next {
+  right: 10px;
+}
+
+.movies-carousel-section .slick-next::before {
+  transform: rotate(45deg);
+  margin-left: 2px;
+}
+
+.movies-carousel-section .slick-arrow:hover {
+  background: rgba(0, 0, 0, 0.9);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-50%) scale(1.15) translateZ(0);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.movies-carousel-section .slick-arrow:hover::before {
+  border-color: var(--secondary-color);
+}
+
+.movies-carousel-section .slick-arrow:active {
+  transform: translateY(-50%) scale(1.05) translateZ(0);
+}
+
+.movies-carousel-section .slick-arrow.slick-disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Desktop - Center align images and 3-column grid */
+@media (min-width: 992px) {
+  .movies-carousel-section .row-cols-md-3 > * {
+    flex: 0 0 calc(33.333% - 40px);
+    max-width: calc(33.333% - 40px);
+    min-width: 260px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .movies-carousel-section .row-cols-md-5 > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .movies-carousel-section .product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 260px;
+    min-width: 240px;
+  }
+
+  .movies-carousel-section .product-image-portrait {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .movies-carousel-section .product-image-landscape {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    height: 152px;
+    min-width: 270px;
+    min-height: 152px;
+    max-width: 270px;
+    max-height: 152px;
+    margin: 0 auto;
+    flex-shrink: 0;
+  }
+
+  .movies-carousel-section .product-image-landscape .product-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 270px;
+    height: 152px;
+    min-width: 270px;
+    min-height: 152px;
+    max-width: 270px;
+    max-height: 152px;
+    flex-shrink: 0;
+  }
+
+  .movies-carousel-section .product-image-landscape img {
+    width: 270px;
+    height: 152px;
+    min-width: 270px;
+    min-height: 152px;
+    max-width: 270px;
+    max-height: 152px;
+    object-fit: contain;
+    border-radius: 12px;
+    display: block !important;
+    margin: 0 auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    flex-shrink: 0;
+  }
+
+  .movies-carousel-section .product-title {
+    text-align: center;
+    width: 100%;
+  }
+
+  .movies-carousel-section .product-title-link {
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+
+  .movies-carousel-section .text-gray-1300 {
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1199px) {
+  .romantic-title {
+    font-size: 1.5rem;
+  }
+  
+  .movies-carousel-section .product-title {
+    min-height: 36px;
+    font-size: 13px;
+  }
+  
+  .movies-carousel-section .slick-wrapper {
+    padding: 0 50px;
+  }
+  
+  .movies-carousel-section .slick-arrow {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .movies-carousel-section .slick-arrow::before {
+    width: 10px;
+    height: 10px;
+    border-width: 2.5px;
+  }
+  
+  .movies-carousel-section .slick-prev {
+    left: 5px;
+  }
+  
+  .movies-carousel-section .slick-next {
+    right: 5px;
+  }
+
+  .movies-carousel-section {
+    padding: 50px 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .tab-nav__v1 .nav {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .tab-nav__v1 .nav-link {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .movies-carousel-section .slick-wrapper {
+    padding: 0 45px;
+  }
+}
+
+@media (max-width: 768px) {
+  .movies-carousel-section {
+    padding: 40px 0;
+  }
+
+  .tab-nav__v1 {
+    margin-bottom: 25px;
+  }
+
+  .tab-nav__v1 .nav {
+    gap: 10px;
+  }
+
+  .tab-nav__v1 .nav-link {
+    padding: 10px 15px;
+    font-size: 13px;
+  }
+  
+  .romantic-title {
+    font-size: 1.3rem;
+  }
+  
+  .movies-carousel-section .product-image {
+    border-radius: 8px;
+  }
+  
+  .movies-carousel-section .product-title {
+    min-height: 32px;
+    font-size: 12px;
+  }
+  
+  .movies-carousel-section .play-button {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .movies-carousel-section .play-button svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .movies-carousel-section .slick-wrapper {
+    padding: 0 45px;
+  }
+  
+  .movies-carousel-section .slick-arrow {
+    width: 40px;
+    height: 40px;
+    display: flex !important;
+  }
+  
+  .movies-carousel-section .slick-arrow::before {
+    width: 9px;
+    height: 9px;
+    border-width: 2px;
+  }
+  
+  .movies-carousel-section .slick-prev {
+    left: 5px;
+  }
+  
+  .movies-carousel-section .slick-next {
+    right: 5px;
+  }
+  
+  .romantic-header {
+    padding-left: 0;
+    margin-top: 30px;
+  }
+
+  .space-2 {
+    padding: 40px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .movies-carousel-section {
+    padding: 30px 0;
+  }
+
+  .tab-nav__v1 {
+    margin-bottom: 20px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .tab-nav__v1::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-nav__v1 .nav {
+    flex-wrap: nowrap;
+    min-width: max-content;
+  }
+
+  .tab-nav__v1 .nav-link {
+    padding: 10px 14px;
+    font-size: 12px;
+    min-height: 44px;
+    white-space: nowrap;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .romantic-title {
+    font-size: 1.4rem;
+    line-height: 1.3;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .movies-carousel-section .slick-wrapper {
+    padding: 0 45px;
+  }
+
+  .movies-carousel-section .slick-arrow {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .movies-carousel-section .slick-arrow::before {
+    width: 9px;
+    height: 9px;
+  }
+
+  .movies-carousel-section .slick-prev {
+    left: 5px;
+  }
+
+  .movies-carousel-section .slick-next {
+    right: 5px;
+  }
+
+  .movies-carousel-section .product-title {
+    font-size: 11px;
+    min-height: 30px;
+    line-height: 1.35;
+  }
+
+  .movies-carousel-section .play-button {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .movies-carousel-section .play-button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .romantic-header {
+    margin-top: 25px;
+  }
+}
+
+/* Center align images - Global styles */
+.movies-carousel-section .row-cols-md-3,
+.movies-carousel-section .row-cols-md-5 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.movies-carousel-section .col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.movies-carousel-section .col .product {
+  margin: 0 auto;
+}
+
+.movies-carousel-section .product {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.movies-carousel-section .product-image-portrait {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.movies-carousel-section .product-image-portrait .d-inline-block {
+  margin: 0 auto;
+  display: block;
+}
+
+.movies-carousel-section .product-image-landscape {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 270px;
+  height: 152px;
+  min-width: 270px;
+  min-height: 152px;
+  max-width: 270px;
+  max-height: 152px;
+}
+
+.movies-carousel-section .product-image-landscape .d-inline-block {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.movies-carousel-section .product-image-landscape .product-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 270px;
+  height: 152px;
+  min-width: 270px;
+  min-height: 152px;
+  max-width: 270px;
+  max-height: 152px;
+}
+
+.movies-carousel-section .product-image-landscape .product-link img,
+.movies-carousel-section .product-image-landscape img {
+  width: 270px;
+  height: 152px;
+  min-width: 270px;
+  min-height: 152px;
+  max-width: 270px;
+  max-height: 152px;
+  margin: 0 auto !important;
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.movies-carousel-section .product-image-landscape .d-inline-block img {
+  width: 270px;
+  height: 152px;
+  min-width: 270px;
+  min-height: 152px;
+  max-width: 270px;
+  max-height: 152px;
+  margin: 0 auto !important;
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.movies-carousel-section .product-title {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.movies-carousel-section .product-title-link {
+  text-align: center;
+  display: block;
+}
+
+.movies-carousel-section .text-gray-1300 {
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+/* Tablet Responsive - 2 Column Layout */
+@media (min-width: 576px) and (max-width: 991px) {
+  .movies-carousel-section .row-cols-md-3 > * {
+    flex: 0 0 calc(50% - 20px) !important;
+    max-width: calc(50% - 20px) !important;
+    min-width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .movies-carousel-section .product-image-landscape {
+    width: 270px;
+    height: 152px;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .movies-carousel-section .product-image-landscape .product-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    height: 152px;
+    margin: 0 auto;
+  }
+
+  .movies-carousel-section .product-image-landscape img {
+    width: 270px;
+    height: 152px;
+    min-width: 270px;
+    min-height: 152px;
+    max-width: 270px;
+    max-height: 152px;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+/* Mobile Responsive - 1 Column Layout (12x1 Grid) */
+@media (max-width: 768px) {
+  .movies-carousel-section {
+    padding: 40px 0;
+  }
+
+  /* Single column layout - 12 rows, 1 column */
+  .movies-carousel-section .row-cols-md-3 > *,
+  .movies-carousel-section .row-cols-md-5 > * {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-bottom: 30px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .movies-carousel-section .row-cols-md-3,
+  .movies-carousel-section .row-cols-md-5 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .romantic-title {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
+
+  .movies-carousel-section .product {
+    width: 100%;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .movies-carousel-section .product-image-portrait {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 2 / 3;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .movies-carousel-section .product-image-landscape {
+    width: 270px;
+    height: 152px;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .movies-carousel-section .product-image-landscape .product-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    height: 152px;
+    margin: 0 auto;
+  }
+
+  .movies-carousel-section .product-image-landscape img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .movies-carousel-section .product-title {
+    font-size: 0.9rem;
+    line-height: 1.3;
+    min-height: 36px;
+  }
+
+  .movies-carousel-section .play-button {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+  }
+}
+
+@media (max-width: 576px) {
+  .movies-carousel-section {
+    padding: 30px 0;
+  }
+
+  /* Single column layout - 12 rows, 1 column */
+  .movies-carousel-section .row-cols-md-3 > *,
+  .movies-carousel-section .row-cols-md-5 > * {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-bottom: 25px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .movies-carousel-section .row-cols-md-3,
+  .movies-carousel-section .row-cols-md-5 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .romantic-title {
+    font-size: 1.3rem;
+    line-height: 1.3;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .movies-carousel-section .product-image-portrait {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 2 / 3;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .movies-carousel-section .product-image-landscape {
+    width: 270px;
+    height: 152px;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .movies-carousel-section .product-image-landscape .product-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    height: 152px;
+    margin: 0 auto;
+  }
+
+  .movies-carousel-section .product-image-landscape img {
+    width: 270px;
+    height: 152px;
+    max-width: 100%;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .movies-carousel-section .product-title {
+    font-size: 0.85rem;
+    line-height: 1.3;
+    min-height: 32px;
+    font-weight: 600;
+  }
+
+  .movies-carousel-section .text-gray-1300 {
+    font-size: 0.75rem;
+  }
+
+  .movies-carousel-section .play-button {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+
+  .movies-carousel-section .play-button svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .movies-carousel-section {
+    padding: 25px 0;
+  }
+
+  /* Single column layout - 12 rows, 1 column */
+  .movies-carousel-section .row-cols-md-3 > *,
+  .movies-carousel-section .row-cols-md-5 > * {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-bottom: 20px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .movies-carousel-section .row-cols-md-3,
+  .movies-carousel-section .row-cols-md-5 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .romantic-title {
+    font-size: 1.2rem;
+    line-height: 1.3;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+
+  .movies-carousel-section .product-image-portrait {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 2 / 3;
+    margin-bottom: 6px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .movies-carousel-section .product-image-landscape {
+    width: 270px;
+    height: 152px;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    margin-bottom: 6px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .movies-carousel-section .product-image-landscape .product-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    height: 152px;
+    margin: 0 auto;
+  }
+
+  .movies-carousel-section .product-image-landscape img {
+    width: 270px;
+    height: 152px;
+    max-width: 100%;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .movies-carousel-section .product-title {
+    font-size: 0.8rem;
+    line-height: 1.3;
+    min-height: 28px;
+  }
+
+  .movies-carousel-section .text-gray-1300 {
+    font-size: 0.7rem;
+  }
+
+  .movies-carousel-section .play-button {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+  }
+
+  .movies-carousel-section .play-button svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+

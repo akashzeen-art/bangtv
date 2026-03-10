@@ -1,0 +1,10 @@
+export { default as Home } from './Home'
+export { default as About } from './About'
+export { default as Contact } from './Contact'
+export { default as Pricing } from './Pricing'
+export { default as Terms } from './Terms'
+export { default as Refund } from './Refund'
+export { default as Privacy } from './Privacy'
+export { default as MyAccount } from './MyAccount'
+export { default as ComingSoon } from './ComingSoon'
+

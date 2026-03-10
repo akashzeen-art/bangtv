@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bang Tv</title>
+    <script>
+      // GitHub Pages SPA fallback:
+      // Redirect unknown routes back to index.html with the original path/query encoded.
+      (function () {
+        var l = window.location;
+        var repoBase = '/bangtv';
+        var path = l.pathname;
+
+        if (path.indexOf(repoBase + '/') === 0) {
+          path = path.slice(repoBase.length);
+        }
+
+        var redirect =
+          repoBase +
+          '/?__gh_path__=' +
+          encodeURIComponent(path) +
+          '&__gh_search__=' +
+          encodeURIComponent(l.search || '') +
+          '&__gh_hash__=' +
+          encodeURIComponent(l.hash || '');
+
+        l.replace(redirect);
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>

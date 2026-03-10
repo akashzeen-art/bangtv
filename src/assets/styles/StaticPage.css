@@ -1,0 +1,136 @@
+.static-page {
+  min-height: calc(100vh - 200px);
+  background: var(--bg-gradient);
+  padding: 120px 20px 80px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.static-page__container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  color: var(--text-light);
+}
+
+.static-page__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.static-page__meta {
+  font-size: 0.95rem;
+  color: var(--text-gray);
+}
+
+.static-page__divider {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-red));
+  margin: 24px 0 32px;
+  border-radius: 2px;
+}
+
+.static-page__container p {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: var(--text-gray);
+  margin-bottom: 1.2rem;
+}
+
+.static-page__link {
+  color: var(--secondary-red);
+  text-decoration: none;
+}
+
+.static-page__link:hover {
+  color: var(--primary-color);
+}
+
+.static-page__note {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-gray);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.pricing-card {
+  background: var(--bg-gray-light);
+  border-radius: 12px;
+  padding: 16px 18px;
+  border: 1px solid rgba(220, 38, 38, 0.25);
+}
+
+.pricing-card--highlight {
+  border-width: 2px;
+  box-shadow: 0 8px 20px var(--shadow-mixed);
+}
+
+.pricing-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.pricing-card__name {
+  font-weight: 600;
+}
+
+.pricing-card__price {
+  font-weight: 700;
+}
+
+.pricing-card__old {
+  font-size: 0.9rem;
+  color: var(--text-gray);
+  text-decoration: line-through;
+}
+
+.pricing-card__badge {
+  display: inline-block;
+  margin-top: 4px;
+  margin-bottom: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--secondary-red);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.pricing-card__desc {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .static-page {
+    padding: 100px 16px 60px;
+  }
+
+  .static-page__title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .static-page {
+    padding: 90px 12px 50px;
+  }
+
+  .static-page__title {
+    font-size: 1.75rem;
+  }
+}
+
+

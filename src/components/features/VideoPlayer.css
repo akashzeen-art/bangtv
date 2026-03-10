@@ -1,0 +1,523 @@
+.video-player-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: rgba(0, 0, 0, 0.95) !important;
+  z-index: 99999 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 20px !important;
+  animation: fadeIn 0.3s ease !important;
+  backdrop-filter: blur(10px) !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.video-player-container {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 1000px !important;
+  background: #000 !important;
+  border-radius: 12px !important;
+  overflow: visible !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.95), 0 0 0 2px rgba(255, 215, 0, 0.3) !important;
+  animation: slideUp 0.4s ease !important;
+  z-index: 100000 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.video-player-close {
+  position: absolute !important;
+  top: 15px !important;
+  right: 15px !important;
+  z-index: 100001 !important;
+  background: rgba(0, 0, 0, 0.9) !important;
+  border: 2px solid rgba(255, 255, 255, 0.5) !important;
+  border-radius: 50% !important;
+  width: 45px !important;
+  height: 45px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  backdrop-filter: blur(10px) !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+}
+
+.video-player-close:hover {
+  background: rgba(220, 38, 38, 0.9);
+  border-color: #dc2626;
+  transform: scale(1.1);
+}
+
+.video-player-fullscreen {
+  position: absolute !important;
+  top: 15px !important;
+  right: 70px !important;
+  z-index: 100001 !important;
+  background: rgba(0, 0, 0, 0.9) !important;
+  border: 2px solid rgba(255, 255, 255, 0.5) !important;
+  border-radius: 50% !important;
+  width: 45px !important;
+  height: 45px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  backdrop-filter: blur(10px) !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+}
+
+.video-player-fullscreen:hover {
+  background: rgba(255, 105, 180, 0.9) !important;
+  border-color: var(--primary-color, #FF69B4) !important;
+  transform: scale(1.1) !important;
+}
+
+.video-player-fullscreen svg {
+  visibility: visible !important;
+  opacity: 1 !important;
+  stroke: white !important;
+  stroke-width: 2 !important;
+  transition: all 0.3s ease !important;
+}
+
+.video-player-fullscreen:hover svg {
+  stroke: #000 !important;
+}
+
+.video-player-wrapper {
+  position: relative !important;
+  width: 100% !important;
+  padding-bottom: 56.25% !important;
+  background: #000 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+}
+
+.video-player-video {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  outline: none !important;
+  background: #000 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+  z-index: 1 !important;
+}
+
+/* Hide download button in video controls */
+.video-player-video::-webkit-media-controls {
+  display: flex !important;
+}
+
+.video-player-video::-webkit-media-controls-enclosure {
+  display: flex !important;
+}
+
+/* Remove download button from controls */
+.video-player-video::-webkit-media-controls-download-button {
+  display: none !important;
+}
+
+.video-player-video::-webkit-media-controls-fullscreen-button {
+  display: none !important;
+}
+
+/* Loading Spinner */
+.video-player-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 20;
+  color: white;
+}
+
+.video-player-loading p {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.video-player-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 105, 180, 0.3);
+  border-top-color: var(--primary-color, #FF69B4);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.video-player-play-overlay {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  cursor: pointer !important;
+  z-index: 10 !important;
+  transition: background 0.3s ease !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.video-player-play-overlay:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.video-player-play-button {
+  width: 80px !important;
+  height: 80px !important;
+  background: var(--primary-color, #FF69B4) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 8px 30px rgba(255, 105, 180, 0.6) !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 11 !important;
+}
+
+.video-player-play-overlay:hover .video-player-play-button {
+  transform: scale(1.1);
+  box-shadow: 0 12px 40px rgba(255, 215, 0, 0.6);
+}
+
+.video-player-info {
+  padding: 20px !important;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 20, 20, 0.95) 100%) !important;
+  border-top: 1px solid rgba(255, 215, 0, 0.3) !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+  z-index: 2 !important;
+}
+
+.video-player-title {
+  color: var(--primary-color, #FF69B4) !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  margin: 0 0 10px 0 !important;
+  line-height: 1.3 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+.video-player-description {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 0.95rem !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Additional CSS to hide download button across all browsers */
+.video-player-video {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Hide download button in Firefox */
+.video-player-video::-moz-media-controls {
+  display: flex !important;
+}
+
+/* Hide download button in Edge/IE */
+.video-player-video::-ms-media-controls {
+  display: flex !important;
+}
+
+/* Ensure controls don't show download option */
+.video-player-video::--webkit-media-controls-panel {
+  display: flex !important;
+}
+
+/* Hide context menu download option */
+.video-player-video {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Ensure all video player elements are visible */
+.video-player-overlay * {
+  visibility: visible !important;
+}
+
+.video-player-container * {
+  visibility: visible !important;
+}
+
+/* Force visibility for video element */
+.video-player-video {
+  pointer-events: auto !important;
+}
+
+/* Ensure play button is always visible */
+.video-player-play-button svg {
+  visibility: visible !important;
+  opacity: 1 !important;
+  fill: white !important;
+}
+
+/* Ensure close button is always visible */
+.video-player-close svg {
+  visibility: visible !important;
+  opacity: 1 !important;
+  stroke: white !important;
+  stroke-width: 2 !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .video-player-overlay {
+    padding: 0 !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+  }
+
+  .video-player-container {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    margin: 0 !important;
+  }
+
+  .video-player-wrapper {
+    width: 100% !important;
+    padding-bottom: 0 !important;
+    height: calc(100vh - 120px) !important;
+    flex: 1 !important;
+    min-height: 0 !important;
+  }
+
+  .video-player-video {
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+
+  .video-player-close {
+    top: 10px !important;
+    right: 10px !important;
+    width: 44px !important;
+    height: 44px !important;
+    z-index: 100002 !important;
+  }
+
+  .video-player-fullscreen {
+    top: 10px !important;
+    right: 64px !important;
+    width: 44px !important;
+    height: 44px !important;
+    z-index: 100002 !important;
+  }
+
+  .video-player-fullscreen svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  .video-player-close svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  .video-player-play-button {
+    width: 70px !important;
+    height: 70px !important;
+  }
+
+  .video-player-play-button svg {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .video-player-info {
+    padding: 15px !important;
+    flex-shrink: 0 !important;
+    max-height: 120px !important;
+    overflow-y: auto !important;
+  }
+
+  .video-player-title {
+    font-size: 1.1rem !important;
+    margin-bottom: 8px !important;
+  }
+
+  .video-player-description {
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .video-player-loading {
+    height: 100% !important;
+  }
+
+  .video-player-spinner {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .video-player-loading p {
+    font-size: 0.9rem !important;
+    margin-top: 15px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-player-overlay {
+    padding: 0 !important;
+  }
+
+  .video-player-container {
+    border-radius: 0 !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+  }
+
+  .video-player-wrapper {
+    height: calc(100vh - 100px) !important;
+  }
+
+  .video-player-close {
+    top: 8px !important;
+    right: 8px !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .video-player-fullscreen {
+    top: 8px !important;
+    right: 56px !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .video-player-fullscreen svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  .video-player-close svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  .video-player-play-button {
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+  .video-player-play-button svg {
+    width: 35px !important;
+    height: 35px !important;
+  }
+
+  .video-player-info {
+    padding: 12px !important;
+    max-height: 100px !important;
+  }
+
+  .video-player-title {
+    font-size: 1rem !important;
+    margin-bottom: 6px !important;
+  }
+
+  .video-player-description {
+    font-size: 0.8rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .video-player-spinner {
+    width: 35px !important;
+    height: 35px !important;
+  }
+
+  .video-player-loading p {
+    font-size: 0.85rem !important;
+    margin-top: 12px !important;
+  }
+}
+
+/* Landscape mobile orientation */
+@media (max-width: 768px) and (orientation: landscape) {
+  .video-player-wrapper {
+    height: calc(100vh - 80px) !important;
+  }
+
+  .video-player-info {
+    max-height: 80px !important;
+    padding: 10px !important;
+  }
+
+  .video-player-title {
+    font-size: 1rem !important;
+    margin-bottom: 4px !important;
+  }
+
+  .video-player-description {
+    font-size: 0.8rem !important;
+  }
+}
+

@@ -1,0 +1,12 @@
+export { default as HeroSection } from './HeroSection'
+export { default as PopularMovies } from './PopularMovies'
+export { default as MoviesCarousel } from './MoviesCarousel'
+export { default as FeaturedMovie } from './FeaturedMovie'
+export { default as TVShowsSection } from './TVShowsSection'
+export { default as EpisodesSection } from './EpisodesSection'
+export { default as FeaturedTVEpisodes } from './FeaturedTVEpisodes'
+export { default as Top9ThisWeek } from './Top9ThisWeek'
+export { default as NewestMovies } from './NewestMovies'
+export { default as LoginModal } from './LoginModal'
+export { default as VideoPlayer } from './VideoPlayer'
+

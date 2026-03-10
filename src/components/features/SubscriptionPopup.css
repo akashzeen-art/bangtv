@@ -1,0 +1,345 @@
+/* Overlay - fixed on full page, allows background scroll but popup stays fixed */
+.subscription-popup-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  min-width: 100vw !important;
+  min-height: 100vh !important;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+  background: rgba(0, 0, 0, 0.85) !important;
+  backdrop-filter: blur(5px) !important;
+  z-index: 999999 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  pointer-events: auto !important;
+  /* Allow background content to scroll - don't prevent body scroll */
+  overflow: visible !important;
+  /* Allow touch scrolling on background */
+  touch-action: pan-y !important;
+  /* Ensure it's not constrained by any parent */
+  isolation: isolate !important;
+  /* Force it to be on top of everything */
+  contain: layout style paint !important;
+  /* Ensure it covers entire document, not just viewport */
+  position: fixed !important;
+  /* Override any parent transforms or positioning */
+  transform: none !important;
+  /* Ensure it's always visible */
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+  /* Cover entire document height, not just viewport */
+  min-height: 100% !important;
+  height: 100% !important;
+  /* Ensure it's not affected by any parent overflow or positioning */
+  inset: 0 !important;
+}
+
+/* Global override to ensure popup is always on top */
+body > .subscription-popup-overlay {
+  position: fixed !important;
+  z-index: 999999 !important;
+}
+
+/* Popup container - fixed in center of viewport, never moves with scroll */
+.subscription-popup-container {
+  background: #000 !important;
+  padding: 20px !important;
+  border-radius: 12px !important;
+  width: 100% !important;
+  max-width: 360px !important;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.2), 0 0 60px rgba(0, 0, 0, 0.8) !important;
+  text-align: center !important;
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: translate(-50%, -50%) !important;
+  transform-origin: center center !important;
+  border: 2px solid #FF69B4 !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  flex-shrink: 0 !important;
+  z-index: 1000000 !important;
+  pointer-events: auto !important;
+  /* Ensure it never moves with scroll - fixed to viewport center */
+  will-change: transform !important;
+  /* Force it to be independent of any parent */
+  contain: layout style paint !important;
+}
+
+/* Global override to ensure popup container is always on top */
+body > .subscription-popup-overlay > .subscription-popup-container {
+  position: fixed !important;
+  z-index: 1000000 !important;
+}
+
+/* Heading text */
+.subscription-popup-title {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-family: Arial, sans-serif;
+}
+
+/* Mobile input */
+.subscription-input-group {
+  margin-bottom: 10px;
+}
+
+.subscription-input-group input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  text-align: center;
+  border: 2px solid #FF69B4;
+  border-radius: 6px;
+  background: black;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.subscription-input-group input[type="tel"]:focus {
+  outline: none;
+  border-color: #FF91A4;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+}
+
+/* Error message */
+.subscription-error-message {
+  color: #FF69B4;
+  font-size: 0.85rem;
+  margin-top: 8px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Email input */
+.subscription-input-group input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  text-align: center;
+  border: 2px solid #FF69B4;
+  border-radius: 6px;
+  background: grey;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.subscription-input-group input[type="email"]:focus {
+  outline: none;
+  border-color: #FF91A4;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+}
+
+/* Placeholder styling */
+.subscription-input-group input::placeholder {
+  color: #aaa;
+}
+
+/* Mobile number display */
+.subscription-mobile-display {
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+/* container for each plan */
+.subscription-plan-option {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start; /* align radio to the top of the plan body */
+  border: 2px solid #FF69B4;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  background: #000;
+  color: #fff;
+  box-sizing: border-box;
+  min-height: 72px; /* makes boxes visually consistent */
+}
+
+/* radio */
+.subscription-plan-radio {
+  flex-shrink: 0;
+  margin: 6px 0 0 0; /* nudge radio to align visually with the top row */
+  transform: scale(1.3);
+  accent-color: #FF69B4;
+}
+
+/* right side wrapper */
+.subscription-plan-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 0; /* allow children to shrink properly */
+}
+
+/* top row: prices + discount */
+.subscription-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+/* price group on left of top row */
+.subscription-price-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden; /* prevent long names from pushing discount */
+  min-width: 0; /* CRITICAL to allow flex children to shrink */
+}
+
+/* plan name */
+.subscription-plan-name {
+  font-size: 1.05rem;
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+/* current price + old price */
+.subscription-price-now {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.subscription-price-old {
+  font-size: 0.95rem;
+  color: #bbb;
+  text-decoration: line-through;
+  margin-left: 6px;
+  flex: 0 0 auto;
+}
+
+/* discount badge — fixed shrink/width behaviour */
+.subscription-discount {
+  background: #FF69B4;
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  flex-shrink: 0; /* prevent it from shrinking */
+  text-align: center;
+  min-width: 84px; /* consistent visual width, tweak if needed */
+}
+
+/* description row under top-row */
+.subscription-plan-desc {
+  color: #cfcfcf;
+  font-size: 0.95rem;
+  margin-top: 4px;
+  text-align: center; /* center the description under the top row */
+}
+
+/* invisible placeholder for weekly to match height (optional) */
+.subscription-plan-desc-placeholder {
+  height: 1.2rem; /* tweak if you need weekly box height to match monthly */
+  visibility: hidden;
+}
+
+/* Form actions container */
+.subscription-form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  width: 100%;
+}
+
+/* Back button */
+.subscription-back-btn {
+  padding: 10px 20px;
+  background: #333;
+  color: white;
+  border: 2px solid #666;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  flex: 1;
+}
+
+.subscription-back-btn:hover {
+  background: #444;
+  border-color: #888;
+}
+
+/* Submit button */
+.subscription-submit-btn {
+  padding: 10px 20px;
+  background: #FF69B4;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  flex: 1;
+}
+
+.subscription-submit-btn:hover {
+  background: #C71585;
+}
+
+/* Close button */
+.subscription-popup-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 100001;
+  padding: 5px;
+  line-height: 1;
+}
+
+.subscription-popup-close:hover {
+  opacity: 0.7;
+}
+
+/* small screens: keep layout tidy */
+@media (max-width: 480px) {
+  .subscription-plan-option {
+    padding: 10px;
+    gap: 10px;
+    min-height: auto;
+  }
+  .subscription-plan-radio {
+    margin-top: 4px;
+  }
+  .subscription-discount {
+    padding: 6px 8px;
+    min-width: 68px;
+    font-size: 0.78rem;
+  }
+  .subscription-plan-desc {
+    font-size: 0.9rem;
+    padding-right: 6px;
+    padding-left: 6px;
+  }
+}
