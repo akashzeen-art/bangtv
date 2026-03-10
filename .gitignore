@@ -10,6 +10,9 @@ node_modules/
 /build
 /dist
 
+# Archives / exports
+*.zip
+
 # Environment Variables
 .env
 .env.local
