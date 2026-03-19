@@ -7,29 +7,29 @@ const Top9ThisWeek = () => {
   const { checkAndPlayVideo } = useSubscription()
 
   const movies = [
-    { id: 1, year: '1997', title: 'Private Rhythm — Solo Erotic', genre: 'Yoga, Erotic', videoUrl: 'https://postback.v1mobi.com/content/yoga_user/yoga_user_videos/1.mp4' },
-    { id: 2, year: '2020', title: 'Warm Curves — Body Sculpt Flow', genre: 'Yoga, Sculpt', videoUrl: 'https://postback.v1mobi.com/content/yoga_user/yoga_user_videos/2.mp4' },
-    { id: 3, year: '1999', title: 'Lunar Ease — Relaxation', genre: 'Yoga, Relaxation', videoUrl: 'https://postback.v1mobi.com/content/yoga_user/yoga_user_videos/3.mp4' },
-    { id: 4, year: '1998', title: 'Gentle Intensity — Balanced Flow', genre: 'Yoga, Flow', videoUrl: 'https://postback.v1mobi.com/content/yoga_user/yoga_user_videos/4.mp4' },
-    { id: 5, year: '1999', title: 'Sacred Ease — Restorative Sensual', genre: 'Yoga, Restorative', videoUrl: 'https://postback.v1mobi.com/content/yoga_user/yoga_user_videos/5.mp4' },
-    { id: 6, year: '2004', title: 'Deep Calm — Meditative Yoga', genre: 'Yoga, Meditation', videoUrl: 'https://postback.v1mobi.com/content/yoga_user/yoga_user_videos/6.mp4' },
-    { id: 7, year: '2008', title: 'Slow Radiance — Aesthetic Flow', genre: 'Yoga, Aesthetic', videoUrl: 'https://postback.v1mobi.com/content/yoga_user/yoga_user_videos/7.mp4' },
-    { id: 8, year: '1999', title: 'Inner Caress — Sensory Yoga', genre: 'Yoga, Sensory', videoUrl: 'https://postback.v1mobi.com/content/yoga_user/yoga_user_videos/8.mp4' },
-    { id: 9, year: '2004', title: 'Silent Desire — Minimal Erotic', genre: 'Yoga, Erotic', videoUrl: 'https://postback.v1mobi.com/content/yoga_user/yoga_user_videos/9.mp4' },
-    { id: 10, year: '2021', title: 'Fluid Awareness — Mind-Body', genre: 'Yoga, Mindfulness', videoUrl: 'https://postback.v1mobi.com/content/yoga_user/yoga_user_videos/10.mp4' }
+    { id: 1, year: '1997', title: 'Private Rhythm — Solo Erotic', genre: 'BangTv, Erotic', videoUrl: 'https://postback.v1mobi.com/content/BangTv_user/BangTv_user_videos/1.mp4' },
+    { id: 2, year: '2020', title: 'Warm Curves — Body Sculpt Flow', genre: 'BangTv, Sculpt', videoUrl: 'https://postback.v1mobi.com/content/BangTv_user/BangTv_user_videos/2.mp4' },
+    { id: 3, year: '1999', title: 'Lunar Ease — Relaxation', genre: 'BangTv, Relaxation', videoUrl: 'https://postback.v1mobi.com/content/BangTv_user/BangTv_user_videos/3.mp4' },
+    { id: 4, year: '1998', title: 'Gentle Intensity — Balanced Flow', genre: 'BangTv, Flow', videoUrl: 'https://postback.v1mobi.com/content/BangTv_user/BangTv_user_videos/4.mp4' },
+    { id: 5, year: '1999', title: 'Sacred Ease — Restorative Sensual', genre: 'BangTv, Restorative', videoUrl: 'https://postback.v1mobi.com/content/BangTv_user/BangTv_user_videos/5.mp4' },
+    { id: 6, year: '2004', title: 'Deep Calm — Meditative BangTv', genre: 'BangTv, Meditation', videoUrl: 'https://postback.v1mobi.com/content/BangTv_user/BangTv_user_videos/6.mp4' },
+    { id: 7, year: '2008', title: 'Slow Radiance — Aesthetic Flow', genre: 'BangTv, Aesthetic', videoUrl: 'https://postback.v1mobi.com/content/BangTv_user/BangTv_user_videos/7.mp4' },
+    { id: 8, year: '1999', title: 'Inner Caress — Sensory BangTv', genre: 'BangTv, Sensory', videoUrl: 'https://postback.v1mobi.com/content/BangTv_user/BangTv_user_videos/8.mp4' },
+    { id: 9, year: '2004', title: 'Silent Desire — Minimal Erotic', genre: 'BangTv, Erotic', videoUrl: 'https://postback.v1mobi.com/content/BangTv_user/BangTv_user_videos/9.mp4' },
+    { id: 10, year: '2021', title: 'Fluid Awareness — Mind-Body', genre: 'BangTv, Mindfulness', videoUrl: 'https://postback.v1mobi.com/content/BangTv_user/BangTv_user_videos/10.mp4' }
   ]
 
   const tvSeries = [
-    { id: 1, year: '2008', title: 'Golden Calm — Luxury Relaxation', genre: 'Yoga, Luxury', videoUrl: 'https://postback.v1mobi.com/content/yoga_user/yoga_user_videos/11.mp4' },
-    { id: 2, year: '1999', title: 'Warm Grace — Elegant Flow', genre: 'Yoga, Flow', videoUrl: 'https://postback.v1mobi.com/content/yoga_user/yoga_user_videos/12.mp4' },
-    { id: 3, year: '2004', title: 'Soft Rhythm — Beginner Sensual', genre: 'Yoga, Beginner', videoUrl: 'https://postback.v1mobi.com/content/yoga_user/yoga_user_videos/13.mp4' },
-    { id: 4, year: '1997', title: 'Velvet Presence — Premium Solo', genre: 'Yoga, Premium', videoUrl: 'https://postback.v1mobi.com/content/yoga_user/yoga_user_videos/14.mp4' },
-    { id: 5, year: '2020', title: 'Quiet Strength — Controlled Power', genre: 'Yoga, Strength', videoUrl: 'https://postback.v1mobi.com/content/yoga_user/yoga_user_videos/15.mp4' },
-    { id: 6, year: '1999', title: 'Gentle Seduction — Erotic Wellness', genre: 'Yoga, Erotic', videoUrl: 'https://postback.v1mobi.com/content/yoga_user/yoga_user_videos/16.mp4' },
-    { id: 7, year: '1998', title: 'Blissful Flow — Signature Series', genre: 'Yoga, Signature', videoUrl: 'https://postback.v1mobi.com/content/yoga_user/yoga_user_videos/17.mp4' },
-    { id: 8, year: '1999', title: 'Velvet Flow — Soft Hentai Fantasy', genre: 'Yoga, Sensual', videoUrl: 'https://postback.v1mobi.com/content/yoga_user/yoga_user_videos/1.mp4' },
-    { id: 9, year: '2004', title: 'Midnight Stretch — Late-Night Wellness', genre: 'Yoga, Wellness', videoUrl: 'https://postback.v1mobi.com/content/yoga_user/yoga_user_videos/2.mp4' },
-    { id: 10, year: '2022', title: 'Soft Awakening — Gentle Erotic Yoga', genre: 'Yoga, Erotic', videoUrl: 'https://postback.v1mobi.com/content/yoga_user/yoga_user_videos/3.mp4' }
+    { id: 1, year: '2008', title: 'Golden Calm — Luxury Relaxation', genre: 'BangTv, Luxury', videoUrl: 'https://postback.v1mobi.com/content/BangTv_user/BangTv_user_videos/11.mp4' },
+    { id: 2, year: '1999', title: 'Warm Grace — Elegant Flow', genre: 'BangTv, Flow', videoUrl: 'https://postback.v1mobi.com/content/BangTv_user/BangTv_user_videos/12.mp4' },
+    { id: 3, year: '2004', title: 'Soft Rhythm — Beginner Sensual', genre: 'BangTv, Beginner', videoUrl: 'https://postback.v1mobi.com/content/BangTv_user/BangTv_user_videos/13.mp4' },
+    { id: 4, year: '1997', title: 'Velvet Presence — Premium Solo', genre: 'BangTv, Premium', videoUrl: 'https://postback.v1mobi.com/content/BangTv_user/BangTv_user_videos/14.mp4' },
+    { id: 5, year: '2020', title: 'Quiet Strength — Controlled Power', genre: 'BangTv, Strength', videoUrl: 'https://postback.v1mobi.com/content/BangTv_user/BangTv_user_videos/15.mp4' },
+    { id: 6, year: '1999', title: 'Gentle Seduction — Erotic Wellness', genre: 'BangTv, Erotic', videoUrl: 'https://postback.v1mobi.com/content/BangTv_user/BangTv_user_videos/16.mp4' },
+    { id: 7, year: '1998', title: 'Blissful Flow — Signature Series', genre: 'BangTv, Signature', videoUrl: 'https://postback.v1mobi.com/content/BangTv_user/BangTv_user_videos/17.mp4' },
+    { id: 8, year: '1999', title: 'Velvet Flow — Soft Hentai Fantasy', genre: 'BangTv, Sensual', videoUrl: 'https://postback.v1mobi.com/content/BangTv_user/BangTv_user_videos/1.mp4' },
+    { id: 9, year: '2004', title: 'Midnight Stretch — Late-Night Wellness', genre: 'BangTv, Wellness', videoUrl: 'https://postback.v1mobi.com/content/BangTv_user/BangTv_user_videos/2.mp4' },
+    { id: 10, year: '2022', title: 'Soft Awakening — Gentle Erotic BangTv', genre: 'BangTv, Erotic', videoUrl: 'https://postback.v1mobi.com/content/BangTv_user/BangTv_user_videos/3.mp4' }
   ]
 
   const handleItemClick = (item) => {

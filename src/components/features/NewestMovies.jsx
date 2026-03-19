@@ -5,6 +5,7 @@ import './NewestMovies.css'
 const NewestMovies = () => {
   const [activeTab, setActiveTab] = useState('today')
   const { checkAndPlayVideo } = useSubscription()
+  const resolveAssetPath = (assetPath) => `${import.meta.env.BASE_URL}${assetPath.replace(/^\//, '')}`
 
   // Helper function to truncate description to first 4 words
   const truncateDescription = (description) => {
@@ -24,6 +25,10 @@ const NewestMovies = () => {
     videoUrl: 'https://vz-eb88fa42-751.b-cdn.net/c30c1a64-f06b-4386-ba0d-c5e2938d4c2d/play_480p.mp4',
     views: '4.2K'
   }
+  const featuredMovieWithResolvedImage = {
+    ...featuredMovie,
+    image: resolveAssetPath(featuredMovie.image),
+  }
 
   const movies = [
     { id: 1, year: '2017', title: 'Midnight Stretch — Late-Night Wellness', genres: ['Nocturne', 'Sensual'], image: '/thumbnails/landscape/4.png', videoUrl: 'https://vz-eb88fa42-751.b-cdn.net/05e506e3-6aa6-4480-859e-a224fa15f398/play_480p.mp4', description: 'Soft affection meets forbidden attraction, balancing innocence and temptation.', views: '3.8K' },
@@ -39,12 +44,16 @@ const NewestMovies = () => {
     { id: 11, year: '2024', title: 'Ethereal Grace — Flowing Movement', genres: ['Dreamlike', 'Mystique'], image: '/thumbnails/landscape/3.png', videoUrl: 'https://vz-eb88fa42-751.b-cdn.net/0b9278e2-07d7-46be-896e-fcd500c46f58/play_480p.mp4', description: 'Almost-touch moments heighten anticipation and emotional intimacy.', views: '3.8K' },
     { id: 12, year: '2024', title: 'Radiant Flow — Energy Awakening', genres: ['Passion', 'Euphoria'], image: '/thumbnails/landscape/14.png', videoUrl: 'https://vz-eb88fa42-751.b-cdn.net/e28041b1-1ca8-4f2a-80b1-51a01466bc90/play_480p.mp4', description: 'A deliberate build of longing rewards patience with deep sensual payoff.', views: '4.1K' }
   ]
+  const moviesWithResolvedImages = movies.map((movie) => ({
+    ...movie,
+    image: resolveAssetPath(movie.image),
+  }))
 
   const handleFeaturedClick = () => {
     const videoData = {
       url: featuredMovie.videoUrl,
-      title: featuredMovie.title,
-      description: featuredMovie.description || `${featuredMovie.year} • Featured Movie`
+      title: featuredMovieWithResolvedImage.title,
+      description: featuredMovieWithResolvedImage.description || `${featuredMovieWithResolvedImage.year} • Featured Movie`
     }
     checkAndPlayVideo(videoData)
   }
@@ -83,7 +92,7 @@ const NewestMovies = () => {
                       style={{ cursor: 'pointer' }}
                       onClick={handleFeaturedClick}
                     >
-                      <img className="img-fluid" src={featuredMovie.image} alt={featuredMovie.title} loading="lazy" style={{ width: '270px', height: '152px', objectFit: 'cover' }} />
+                      <img className="img-fluid" src={featuredMovieWithResolvedImage.image} alt={featuredMovieWithResolvedImage.title} loading="lazy" style={{ width: '270px', height: '152px', objectFit: 'cover' }} />
                       <div className="play-overlay">
                         <div className="play-button">
                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -97,18 +106,18 @@ const NewestMovies = () => {
                 <div className="col d-flex" data-aos="fade-left" data-aos-delay="200">
                   <div className="my-lg-auto ml-lg-3 mt-3">
                     <div className="product-meta font-size-12 mb-2">
-                      <span><a href="#" className="h-g-primary">{featuredMovie.year}</a></span>
+                      <span><a href="#" className="h-g-primary">{featuredMovieWithResolvedImage.year}</a></span>
                     </div>
                     <div className="product-title font-weight-bold font-size-19 mb-3">
-                      <a href="#" className="text-white newest-featured-title">{featuredMovie.title}</a>
+                      <a href="#" className="text-white newest-featured-title">{featuredMovieWithResolvedImage.title}</a>
                     </div>
-                    <p className="text-gray-1800 font-size-14 mb-4 line-height-lg">{featuredMovie.description}</p>
+                    <p className="text-gray-1800 font-size-14 mb-4 line-height-lg">{featuredMovieWithResolvedImage.description}</p>
                   </div>
                 </div>
                 <div className="w-100 mb-4"></div>
                 <div className="col-12">
                   <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 justify-content-center newest-movies-grid">
-                    {movies.map((movie, index) => (
+                    {moviesWithResolvedImages.map((movie, index) => (
                       <div key={movie.id} className="col mb-5 mb-xl-4" data-aos="fade-up" data-aos-delay={index * 50}>
                         <div className="product">
                           <div className="product-image mb-2 product-image-landscape">

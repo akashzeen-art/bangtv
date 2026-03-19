@@ -6,6 +6,7 @@ import './FeaturedMovie.css'
 const FeaturedMovie = () => {
   const videoRef = useRef(null)
   const { checkAndPlayVideo } = useSubscription()
+  const resolveAssetPath = (assetPath) => `${import.meta.env.BASE_URL}${assetPath.replace(/^\//, '')}`
 
   const featuredMovie = {
     title: 'Velvet Flow — Soft Hentai Fantasy',
@@ -15,11 +16,15 @@ const FeaturedMovie = () => {
     backgroundVideo: 'https://vz-eb88fa42-751.b-cdn.net/ae1a65fc-542c-4c29-9acc-5b6f1aedd492/play_480p.mp4',
     videoUrl: 'https://vz-eb88fa42-751.b-cdn.net/ae1a65fc-542c-4c29-9acc-5b6f1aedd492/play_480p.mp4'
   }
+  const featuredMovieWithResolvedImage = {
+    ...featuredMovie,
+    logoImage: resolveAssetPath(featuredMovie.logoImage),
+  }
 
   const handleLogoClick = () => {
     const videoData = {
       url: featuredMovie.videoUrl,
-      title: featuredMovie.title,
+      title: featuredMovieWithResolvedImage.title,
       description: 'Featured Movie'
     }
     checkAndPlayVideo(videoData)
@@ -68,7 +73,7 @@ const FeaturedMovie = () => {
             <div>
               <img 
                 className="img-fluid mb-6 d-block animate-scale featured-logo" 
-                src={featuredMovie.logoImage} 
+                src={featuredMovieWithResolvedImage.logoImage} 
                 alt="Logo" 
                 style={{width: '214px', height: '120px', objectFit: 'cover', cursor: 'pointer'}} 
                 data-aos="zoom-in"

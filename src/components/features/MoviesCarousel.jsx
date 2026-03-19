@@ -5,6 +5,7 @@ import './MoviesCarousel.css'
 
 const MoviesCarousel = ({ variant = 'light', sectionTitle = 'Trending Movies' }) => {
   const { checkAndPlayVideo } = useSubscription()
+  const resolveAssetPath = (assetPath) => `${import.meta.env.BASE_URL}${assetPath.replace(/^\//, '')}`
 
   // Helper function to truncate description to first 4 words
   const truncateDescription = (description) => {
@@ -52,6 +53,10 @@ const MoviesCarousel = ({ variant = 'light', sectionTitle = 'Trending Movies' })
     { id: 11, title: 'Radiant Flow — Energy Awakening', year: '2024', genres: ['Euphoria', 'Passion'], duration: '00:37', image: '/thumbnails/landscape/14.png', videoUrl: variant === 'dark' ? 'https://vz-eb88fa42-751.b-cdn.net/62670a47-ab7e-4247-8fc6-02d7ed0cbdea/play_480p.mp4' : 'https://vz-eb88fa42-751.b-cdn.net/e28041b1-1ca8-4f2a-80b1-51a01466bc90/play_480p.mp4', description: 'Wordless scenes rely on movement, breath, and proximity to convey rising desire.', views: '3.6K' },
     { id: 12, title: 'Serene Passion — Intimate Movement', year: '2024', genres: ['Passion', 'Intimacy'], duration: '00:39', image: '/thumbnails/landscape/15.png', videoUrl: variant === 'dark' ? 'https://vz-eb88fa42-751.b-cdn.net/71a67c96-c52d-4a0c-8b66-709a0d5cfe43/play_480p.mp4' : 'https://vz-eb88fa42-751.b-cdn.net/0b9278e2-07d7-46be-896e-fcd500c46f58/play_480p.mp4', description: 'Desire unfolds gradually like petals opening beneath the glow of animated night.', views: '4.0K' }
   ]
+  const moviesWithResolvedImages = movies.map((movie) => ({
+    ...movie,
+    image: resolveAssetPath(movie.image),
+  }))
 
   const handleThumbnailClick = (movie) => {
     const videoData = {
@@ -81,7 +86,7 @@ const MoviesCarousel = ({ variant = 'light', sectionTitle = 'Trending Movies' })
             <div className="row">
               <div className="col-12" data-aos="fade-left">
                 <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 justify-content-center">
-                  {movies.map((movie, index) => (
+                  {moviesWithResolvedImages.map((movie, index) => (
                     <div key={movie.id} className="col mb-5 mb-xl-4" data-aos="zoom-in" data-aos-delay={index * 50}>
                       <div className="product">
                         <div className="product-image mb-2 product-image-landscape">
@@ -90,7 +95,7 @@ const MoviesCarousel = ({ variant = 'light', sectionTitle = 'Trending Movies' })
                             style={{ cursor: 'pointer' }}
                             onClick={() => handleThumbnailClick(movie)}
                           >
-                            <img className="img-fluid" src={movie.image} alt={movie.title} loading="lazy" style={{ width: '270px', height: '152px', objectFit: 'contain', maxWidth: '100%', margin: '0 auto', display: 'block' }} />
+                            <img className="img-fluid" src={movie.image} alt={movie.title} loading="lazy" style={{ width: '270px', height: '152px', objectFit: 'cover', maxWidth: '100%', margin: '0 auto', display: 'block' }} />
                             <div className="play-overlay">
                               <div className="play-button">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

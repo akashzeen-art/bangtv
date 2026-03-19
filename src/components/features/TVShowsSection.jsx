@@ -5,6 +5,7 @@ import './TVShowsSection.css'
 const TVShowsSection = () => {
   const scrollContainerRef = useRef(null)
   const { checkAndPlayVideo } = useSubscription()
+  const resolveAssetPath = (assetPath) => `${import.meta.env.BASE_URL}${assetPath.replace(/^\//, '')}`
 
   // Helper function to truncate description to first 4 words
   const truncateDescription = (description) => {
@@ -33,6 +34,10 @@ const TVShowsSection = () => {
     { id: 14, title: 'Dark Allure', genres: ['Allure', 'Forbidden'], duration: '00:41', image: '/thumbnails/portrait/14.png', videoUrl: 'https://vz-eb88fa42-751.b-cdn.net/0f6436a8-5976-43fc-93d7-675a5985a0cb/play_480p.mp4', description: 'Shadows, mystery, and intense gazes craft a darker, seductive anime aesthetic.', views: '4.6K' },
     { id: 15, title: 'Fever Dream', genres: ['Dreamlike', 'Hypnotic'], duration: '00:43', image: '/thumbnails/portrait/15.png', videoUrl: 'https://vz-eb88fa42-751.b-cdn.net/62a1d597-a886-420b-a849-158a73f1296a/play_480p.mp4', description: 'Surreal visuals blur fantasy and desire, creating hypnotic, dreamlike sensual immersion.', views: '3.3K' }
   ]
+  const showsWithResolvedImages = shows.map((show) => ({
+    ...show,
+    image: resolveAssetPath(show.image),
+  }))
 
   const handleThumbnailClick = (show) => {
     const videoData = {
@@ -89,7 +94,7 @@ const TVShowsSection = () => {
               className="row row-cols-2 row-cols-md-5 tv-shows-scroll-container" 
               style={{ display: 'flex', flexWrap: 'nowrap', overflowX: 'hidden', marginLeft: 0, marginRight: 0 }}
             >
-              {shows.map((show, index) => (
+              {showsWithResolvedImages.map((show, index) => (
                 <div key={show.id} className="col mb-5 mb-xl-0" data-aos="fade-up" data-aos-delay={index * 100} style={{ flex: '0 0 auto', minWidth: '150px', paddingLeft: '12px', paddingRight: '12px' }}>
                   <div className="product">
                     <div className="product-image mb-2 product-image-portrait">

@@ -3451,3 +3451,27 @@ a:hover {
   }
   
 }
+
+/* Force edge-to-edge thumbnails in all cards */
+.popular-movies-section .product-image-landscape .product-link,
+.movies-carousel-section .product-image-landscape .product-link,
+.newest-movies-section .product-image-landscape .product-link,
+.featured-tv-episodes-section .product-image-landscape .product-link,
+.tv-shows-section .product-image-portrait .product-link,
+.episodes-section .product-image-portrait .product-link {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.popular-movies-section .product-image-landscape img,
+.movies-carousel-section .product-image-landscape img,
+.newest-movies-section .product-image-landscape img,
+.featured-tv-episodes-section .product-image-landscape img,
+.tv-shows-section .product-image-portrait img,
+.episodes-section .product-image-portrait img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+}

@@ -1,11 +1,11 @@
-# OTTYOGA - Yoga Streaming Platform
+# OTTBangTv - BangTv Streaming Platform
 
-A modern React-based OTT (Over-The-Top) platform for yoga content streaming, featuring a beautiful red-themed UI with smooth animations and responsive design.
+A modern React-based OTT (Over-The-Top) platform for BangTv content streaming, featuring a beautiful red-themed UI with smooth animations and responsive design.
 
 ## 🚀 Features
 
 - **Responsive Design**: Fully responsive layout that works seamlessly on all devices
-- **Hero Slider**: Interactive carousel showcasing featured yoga content
+- **Hero Slider**: Interactive carousel showcasing featured BangTv content
 - **Content Sections**: Popular content, featured content, and content carousels
 - **TV Shows & Episodes**: Organized sections for series and episodes
 - **User Authentication**: Login/Register modal with session management
@@ -37,7 +37,7 @@ npm run preview
 ## 📁 Project Structure
 
 ```
-OTTYOGA/FRONT-END/
+OTTBangTv/FRONT-END/
 ├── public/                      # Static assets (served from root)
 │   ├── images/                  # Static images
 │   └── videos/                  # Static videos
@@ -151,7 +151,7 @@ Don't forget to:
 Create a `.env` file in the root directory (use `.env.example` as template):
 ```env
 VITE_API_BASE_URL=http://localhost:8000/api
-VITE_APP_NAME=OTTYOGA
+VITE_APP_NAME=OTTBangTv
 VITE_APP_VERSION=1.0.0
 ```
 
@@ -182,7 +182,7 @@ This project is for educational purposes.
 
 ## 📞 Support
 
-For support, email support@ottyoga.com or open an issue in the repository.
+For support, email support@ottBangTv.com or open an issue in the repository.
 
 ---
 

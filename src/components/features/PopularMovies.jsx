@@ -5,6 +5,7 @@ import './PopularMovies.css'
 
 const PopularMovies = () => {
   const { checkAndPlayVideo } = useSubscription()
+  const resolveAssetPath = (assetPath) => `${import.meta.env.BASE_URL}${assetPath.replace(/^\//, '')}`
 
   // Helper function to truncate description to first 4 words
   const truncateDescription = (description) => {
@@ -30,6 +31,10 @@ const PopularMovies = () => {
     { id: 11, title: 'Bliss Circuit — Sensory Flow', year: '2024', genres: ['Euphoria', 'Sensual'], duration: '00:41', image: '/thumbnails/landscape/11.png', videoUrl: 'https://vz-eb88fa42-751.b-cdn.net/c30c1a64-f06b-4386-ba0d-c5e2938d4c2d/play_480p.mp4', description: 'Subtle dominance emerges through flushed expressions, poised gestures, and controlled sensual storytelling.', views: '3.5K' },
     { id: 12, title: 'Ethereal Grace — Flowing Movement', year: '2024', genres: ['Dreamlike', 'Mystique'], duration: '00:38', image: '/thumbnails/landscape/12.png', videoUrl: 'https://vz-eb88fa42-751.b-cdn.net/05e506e3-6aa6-4480-859e-a224fa15f398/play_480p.mp4', description: 'Rhythmic animation mirrors a racing heartbeat, building anticipation through restrained erotic suggestion.', views: '4.4K' }
   ]
+  const moviesWithResolvedImages = movies.map((movie) => ({
+    ...movie,
+    image: resolveAssetPath(movie.image),
+  }))
 
   const handleThumbnailClick = (movie) => {
     const videoData = {
@@ -61,7 +66,7 @@ const PopularMovies = () => {
         <div className="row justify-content-center popular-movies-grid">
           <div className="col-12">
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 justify-content-center">
-              {movies.map((movie, index) => (
+              {moviesWithResolvedImages.map((movie, index) => (
                 <div key={movie.id} className="col mb-5 mb-xl-4" data-aos="fade-up" data-aos-delay={index * 50}>
                   <div className="product">
                     <div className="product-image mb-2 product-image-landscape">
@@ -70,7 +75,7 @@ const PopularMovies = () => {
                         style={{ cursor: 'pointer' }}
                         onClick={() => handleThumbnailClick(movie)}
                       >
-                        <img className="img-fluid" src={movie.image} alt={movie.title} loading="lazy" style={{ width: '270px', height: '152px', objectFit: 'contain', maxWidth: '100%' }} />
+                        <img className="img-fluid" src={movie.image} alt={movie.title} loading="lazy" style={{ width: '270px', height: '152px', objectFit: 'cover', maxWidth: '100%' }} />
                         <div className="play-overlay">
                           <div className="play-button">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

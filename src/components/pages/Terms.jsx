@@ -19,11 +19,11 @@ const Terms = () => {
         <p className="static-page__meta">Last Updated: 30-06-2025</p>
         <div className="static-page__divider" />
         <p>
-          These Terms and Conditions govern your use of the OTT YOGA service operated by nServe Technology LLC
+          These Terms and Conditions govern your use of the OTT BangTv service operated by nServe Technology LLC
           (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;). By accessing or using the platform you agree to be bound by these Terms.
         </p>
         <p>
-          OTT YOGA is provided for personal, non–commercial use. You agree not to misuse the service, attempt unauthorized
+          OTT BangTv is provided for personal, non–commercial use. You agree not to misuse the service, attempt unauthorized
           access, or infringe on any intellectual property rights related to the content or platform. Access, browsing or use
           of the service indicates your agreement to all the terms and policies referenced here.
         </p>

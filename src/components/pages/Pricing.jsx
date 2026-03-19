@@ -16,7 +16,7 @@ const Pricing = () => {
     <main id="content" className="static-page">
       <section className="static-page__container" data-aos="fade-up">
         <h1 className="static-page__title">Pricing</h1>
-        <p className="static-page__meta">Simple, transparent plans for OTT YOGA</p>
+        <p className="static-page__meta">Simple, transparent plans for OTT BangTv</p>
         <div className="static-page__divider" />
         <div className="pricing-grid">
           <div className="pricing-card">
@@ -26,7 +26,7 @@ const Pricing = () => {
               <span className="pricing-card__old">₹130</span>
             </div>
             <div className="pricing-card__badge">50% OFF</div>
-            <p className="pricing-card__desc">Short–term access to all OTT YOGA content.</p>
+            <p className="pricing-card__desc">Short–term access to all OTT BangTv content.</p>
           </div>
           <div className="pricing-card pricing-card--highlight">
             <div className="pricing-card__header">
@@ -35,7 +35,7 @@ const Pricing = () => {
               <span className="pricing-card__old">₹450</span>
             </div>
             <div className="pricing-card__badge">55% OFF</div>
-            <p className="pricing-card__desc">Best value: unlimited yoga videos &amp; web series for a full year.</p>
+            <p className="pricing-card__desc">Best value: unlimited BangTv videos &amp; web series for a full year.</p>
           </div>
         </div>
         <p className="static-page__note">

@@ -5,6 +5,7 @@ import './FeaturedTVEpisodes.css'
 
 const FeaturedTVEpisodes = () => {
   const { checkAndPlayVideo } = useSubscription()
+  const resolveAssetPath = (assetPath) => `${import.meta.env.BASE_URL}${assetPath.replace(/^\//, '')}`
 
   // Helper function to truncate description to first 4 words
   const truncateDescription = (description) => {
@@ -80,7 +81,7 @@ const FeaturedTVEpisodes = () => {
   }
 
   const episodes = [
-    { id: 1, duration: '00:33 mins', category: 'Sensual', title: 'Gentle Pulse — Relaxed Sensual', image: '/thumbnails/landscape/18.png', videoUrl: 'https://vz-eb88fa42-751.b-cdn.net/a4e8c9d8-d0fd-455a-a533-77776c2ec7a7/play_480p.mp4', description: 'Muted tones and close framing intensify private longing.', views: '3.8K' },
+    { id: 1, duration: '00:33 mins', category: 'Sensual', title: 'Gentle Pulse — Relaxed Sensual', image: '/thumbnails/landscape/18.png', videoUrl: 'https://vz-eb88fa42-751.b-cdn.net/7eed27ff-f1a9-4eb6-ace5-996079cd4f29/play_480p.mp4', description: 'Muted tones and close framing intensify private longing.', views: '3.8K' },
     { id: 2, duration: '00:36 mins', category: 'Erotic', title: 'Fluid Desire — Erotic Movement', image: '/thumbnails/landscape/19.png', videoUrl: 'https://vz-eb88fa42-751.b-cdn.net/b796d201-ca65-487b-9ca7-796fa7a9b895/play_480p.mp4', description: 'Plush visuals and nocturnal pacing craft a luxurious late-night mood.', views: '4.1K' },
     { id: 3, duration: '00:34 mins', category: 'Seductive', title: 'Warm Silhouette — Visual Sensual', image: '/thumbnails/landscape/20.png', videoUrl: 'https://vz-eb88fa42-751.b-cdn.net/2a013ea8-3462-403e-9c46-aec5a8deb34d/play_480p.mp4', description: 'Red-washed scenes signal passion, danger, and temptation.', views: '3.9K' },
     { id: 4, duration: '00:40 mins', category: 'Aesthetic', title: 'Sacred Motion — Artistic', image: '/thumbnails/landscape/21.png', videoUrl: 'https://vz-eb88fa42-751.b-cdn.net/541be462-6b2c-47a3-835b-99168a797c35/play_480p.mp4', description: 'Floating motion and relaxed pacing create soothing erotic immersion.', views: '4.3K' },
@@ -92,6 +93,10 @@ const FeaturedTVEpisodes = () => {
     { id: 10, duration: '00:34 mins', category: 'Mystique', title: 'Quiet Bloom — Feminine Energy', image: '/thumbnails/landscape/27.png', videoUrl: 'https://vz-eb88fa42-751.b-cdn.net/a4cb839b-d738-4274-ac9f-3070c99f74a1/play_720p.mp4', description: 'Inviting tones and soft animation lure viewers closer.', views: '4.1K' },
     { id: 11, duration: '00:34 mins', category: 'Hypnotic', title: 'Soft Focus — Mindful Sensual', image: '/thumbnails/landscape/28.png', videoUrl: 'https://vz-eb88fa42-751.b-cdn.net/d2f9f61e-764f-4e10-8b1a-1686cbc1c494/play_480p.mp4', description: 'Reverent pacing transforms passion into ritual.', views: '3.9K' }
   ]
+  const episodesWithResolvedImages = episodes.map((episode) => ({
+    ...episode,
+    image: resolveAssetPath(episode.image),
+  }))
 
   const handleThumbnailClick = (episode) => {
     const videoData = {
@@ -119,7 +124,7 @@ const FeaturedTVEpisodes = () => {
               <div className="col-12">
                 <div className="js-slick-carousel slick slick-gutters-2 slick-initialized slick-slider">
                   <Slider {...sliderSettings}>
-                    {episodes.map((episode, index) => (
+                    {episodesWithResolvedImages.map((episode, index) => (
                       <div key={episode.id} className="product">
                         <div className="product-image mb-1">
                           <div 

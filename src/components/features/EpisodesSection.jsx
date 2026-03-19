@@ -5,6 +5,7 @@ import './EpisodesSection.css'
 
 const EpisodesSection = () => {
   const { checkAndPlayVideo } = useSubscription()
+  const resolveAssetPath = (assetPath) => `${import.meta.env.BASE_URL}${assetPath.replace(/^\//, '')}`
 
   // Helper function to truncate description to first 4 words
   const truncateDescription = (description) => {
@@ -30,6 +31,10 @@ const EpisodesSection = () => {
     { id: 11, season: 'S01E11', title: 'Radiant Energy — Power Flow', image: '/thumbnails/portrait/26.png', videoUrl: 'https://vz-eb88fa42-751.b-cdn.net/feb4b33b-cf23-4aa2-80e8-978b5a8fabc1/play_480p.mp4', description: 'A secluded world where desire unfolds without interruption.', views: '3.7K' },
     { id: 12, season: 'S01E12', title: 'Serene Completion — Final Flow', image: '/thumbnails/portrait/27.png', videoUrl: 'https://vz-eb88fa42-751.b-cdn.net/18d467e2-d5f4-4bd6-9f05-cead718976e5/play_480p.mp4', description: 'Vulnerability and closeness replace explicitness with emotional depth.', views: '4.1K' }
   ]
+  const episodesWithResolvedImages = episodes.map((episode) => ({
+    ...episode,
+    image: resolveAssetPath(episode.image),
+  }))
 
   const handleThumbnailClick = (episode) => {
     const videoData = {
@@ -53,7 +58,7 @@ const EpisodesSection = () => {
         </div>
         
         <div className="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 row-cols-xl-6 justify-content-center">
-          {episodes.map((episode, index) => (
+          {episodesWithResolvedImages.map((episode, index) => (
             <div key={episode.id} className="col mb-5 mb-xl-4" data-aos="zoom-in" data-aos-delay={index * 50}>
               <div className="product">
                 <div className="product-image mb-2 product-image-portrait">

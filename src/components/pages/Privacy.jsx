@@ -20,7 +20,7 @@ const Privacy = () => {
         <div className="static-page__divider" />
         <p>
           This Privacy Policy explains how nServe Technology LLC collects, uses and protects information when you
-          use the OTT YOGA service. By accessing the platform you consent to the practices described here.
+          use the OTT BangTv service. By accessing the platform you consent to the practices described here.
         </p>
         <p>
           We may collect information such as your contact details, device information and usage data to operate and improve

@@ -196,7 +196,7 @@ const Home = () => {
           width: '90%',
           textAlign: 'center'
         }}>
-          <h3 style={{ color: 'white', marginBottom: '20px' }}>Join Our Yoga Community</h3>
+          <h3 style={{ color: 'white', marginBottom: '20px' }}>Join Our BangTv Community</h3>
           <input 
             type="tel" 
             id="phoneInput" 
@@ -216,7 +216,7 @@ const Home = () => {
             onClick={() => {
               const phone = document.getElementById('phoneInput').value
               if (phone.length >= 8) {
-                alert('Welcome to our Yoga Community! Your subscription is active.')
+                alert('Welcome to our BangTv Community! Your subscription is active.')
                 document.getElementById('subscriptionPopup').style.display = 'none'
               } else {
                 alert('Please enter a valid phone number.')
@@ -261,7 +261,7 @@ const Home = () => {
           width: '90%',
           textAlign: 'center'
         }}>
-          <h3 style={{ color: 'white', marginBottom: '20px' }}>Yoga Session</h3>
+          <h3 style={{ color: 'white', marginBottom: '20px' }}>BangTv Session</h3>
           <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, margin: '20px 0' }}>
             <video 
               id="popupVideo" 

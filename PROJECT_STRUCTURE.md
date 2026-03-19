@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document provides a detailed breakdown of the OTTYOGA project structure, explaining the purpose of each directory and file.
+This document provides a detailed breakdown of the OTTBangTv project structure, explaining the purpose of each directory and file.
 
 ## Directory Structure
 
