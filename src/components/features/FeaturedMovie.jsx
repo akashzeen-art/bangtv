@@ -31,10 +31,16 @@ const FeaturedMovie = () => {
   }
 
   useEffect(() => {
-    // Ensure video plays when component mounts
-    if (videoRef.current) {
-      videoRef.current.play().catch(err => {
-        console.log('Video autoplay prevented:', err)
+    const video = videoRef.current
+    if (!video) return
+
+    // iOS requires load() before play()
+    video.load()
+    const playPromise = video.play()
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Autoplay blocked (common on iOS), show fallback image
+        if (video) video.style.display = 'none'
       })
     }
   }, [])
@@ -49,15 +55,16 @@ const FeaturedMovie = () => {
         muted
         loop
         playsInline
+        webkit-playsinline="true"
+        x5-playsinline="true"
         preload="auto"
         onError={() => {
-          // Hide video and show image on error
           if (videoRef.current) {
             videoRef.current.style.display = 'none'
           }
         }}
       >
-        <source src={featuredMovie.backgroundVideo} type="video/webm" />
+        <source src={featuredMovie.backgroundVideo} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       
