@@ -56,8 +56,7 @@ const FeaturedMovie = () => {
         loop
         playsInline
         webkit-playsinline="true"
-        x5-playsinline="true"
-        preload="auto"
+        preload="none"
         onError={() => {
           if (videoRef.current) {
             videoRef.current.style.display = 'none'

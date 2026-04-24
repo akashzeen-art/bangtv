@@ -109,11 +109,10 @@ const HeroSlider = () => {
     if (ref) {
       videoRefs.current[`video-${index}`] = ref
       
-      // Set video properties
-      ref.loop = false // Disable loop - video should play once and advance
+      ref.loop = false
       ref.muted = true
       ref.playsInline = true
-      ref.preload = 'auto'
+      ref.preload = index === 0 ? 'metadata' : 'none'
       
       // Error handling
       ref.onerror = () => {
@@ -190,9 +189,10 @@ const HeroSlider = () => {
                 muted
                 loop={false}
                 playsInline
-                preload="auto"
+                webkit-playsinline="true"
+                preload={index === 0 ? 'metadata' : 'none'}
               >
-                <source src={videoUrl} type="video/webm" />
+                <source src={videoUrl} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
               
