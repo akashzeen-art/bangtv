@@ -1,345 +1,288 @@
-/* Overlay - fixed on full page, allows background scroll but popup stays fixed */
-.subscription-popup-overlay {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  min-width: 100vw !important;
-  min-height: 100vh !important;
-  max-width: 100vw !important;
-  max-height: 100vh !important;
-  background: rgba(0, 0, 0, 0.85) !important;
-  backdrop-filter: blur(5px) !important;
-  z-index: 999999 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: none !important;
-  pointer-events: auto !important;
-  /* Allow background content to scroll - don't prevent body scroll */
-  overflow: visible !important;
-  /* Allow touch scrolling on background */
-  touch-action: pan-y !important;
-  /* Ensure it's not constrained by any parent */
-  isolation: isolate !important;
-  /* Force it to be on top of everything */
-  contain: layout style paint !important;
-  /* Ensure it covers entire document, not just viewport */
-  position: fixed !important;
-  /* Override any parent transforms or positioning */
-  transform: none !important;
-  /* Ensure it's always visible */
-  visibility: visible !important;
-  opacity: 1 !important;
-  display: block !important;
-  /* Cover entire document height, not just viewport */
-  min-height: 100% !important;
-  height: 100% !important;
-  /* Ensure it's not affected by any parent overflow or positioning */
-  inset: 0 !important;
-}
-
-/* Global override to ensure popup is always on top */
-body > .subscription-popup-overlay {
-  position: fixed !important;
-  z-index: 999999 !important;
-}
-
-/* Popup container - fixed in center of viewport, never moves with scroll */
-.subscription-popup-container {
-  background: #000 !important;
-  padding: 20px !important;
-  border-radius: 12px !important;
-  width: 100% !important;
-  max-width: 360px !important;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.2), 0 0 60px rgba(0, 0, 0, 0.8) !important;
-  text-align: center !important;
-  position: fixed !important;
-  top: 50% !important;
-  left: 50% !important;
-  right: auto !important;
-  bottom: auto !important;
-  transform: translate(-50%, -50%) !important;
-  transform-origin: center center !important;
-  border: 2px solid #FF69B4 !important;
-  box-sizing: border-box !important;
-  margin: 0 !important;
-  flex-shrink: 0 !important;
-  z-index: 1000000 !important;
-  pointer-events: auto !important;
-  /* Ensure it never moves with scroll - fixed to viewport center */
-  will-change: transform !important;
-  /* Force it to be independent of any parent */
-  contain: layout style paint !important;
-}
-
-/* Global override to ensure popup container is always on top */
-body > .subscription-popup-overlay > .subscription-popup-container {
-  position: fixed !important;
-  z-index: 1000000 !important;
-}
-
-/* Heading text */
-.subscription-popup-title {
-  color: white;
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-  font-family: Arial, sans-serif;
-}
-
-/* Mobile input */
-.subscription-input-group {
-  margin-bottom: 10px;
-}
-
-.subscription-input-group input[type="tel"] {
-  width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  text-align: center;
-  border: 2px solid #FF69B4;
-  border-radius: 6px;
-  background: black;
-  color: white;
-  font-weight: bold;
-  letter-spacing: 2px;
-  box-sizing: border-box;
-  transition: border-color 0.3s ease;
-}
-
-.subscription-input-group input[type="tel"]:focus {
-  outline: none;
-  border-color: #FF91A4;
-  box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
-}
-
-/* Error message */
-.subscription-error-message {
-  color: #FF69B4;
-  font-size: 0.85rem;
-  margin-top: 8px;
-  text-align: center;
-  font-weight: 500;
-}
-
-/* Email input */
-.subscription-input-group input[type="email"] {
-  width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  text-align: center;
-  border: 2px solid #FF69B4;
-  border-radius: 6px;
-  background: grey;
-  color: white;
-  font-weight: bold;
-  letter-spacing: 2px;
-  box-sizing: border-box;
-  transition: border-color 0.3s ease;
-}
-
-.subscription-input-group input[type="email"]:focus {
-  outline: none;
-  border-color: #FF91A4;
-  box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
-}
-
-/* Placeholder styling */
-.subscription-input-group input::placeholder {
-  color: #aaa;
-}
-
-/* Mobile number display */
-.subscription-mobile-display {
-  color: white;
-  font-size: 1rem;
-  margin-bottom: 15px;
-}
-
-/* container for each plan */
-.subscription-plan-option {
+/* ── Overlay ── */
+.sp-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.70);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 999999;
   display: flex;
-  gap: 12px;
-  align-items: flex-start; /* align radio to the top of the plan body */
-  border: 2px solid #FF69B4;
-  border-radius: 8px;
-  padding: 12px;
-  margin-bottom: 12px;
-  background: #000;
-  color: #fff;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+}
+
+/* ── Card ── */
+.sp-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  width: 100%;
+  max-width: 448px;
+  padding: 32px;
   box-sizing: border-box;
-  min-height: 72px; /* makes boxes visually consistent */
+  animation: sp-enter 0.3s ease-out both;
 }
 
-/* radio */
-.subscription-plan-radio {
-  flex-shrink: 0;
-  margin: 6px 0 0 0; /* nudge radio to align visually with the top row */
-  transform: scale(1.3);
-  accent-color: #FF69B4;
+@keyframes sp-enter {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1); }
 }
 
-/* right side wrapper */
-.subscription-plan-body {
+/* ── Close button ── */
+.sp-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.sp-close:hover { background: #f3f4f6; }
+
+/* ── Step dots ── */
+.sp-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.sp-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  transition: background 0.3s, transform 0.3s;
+}
+.sp-dot--active {
+  background: #7c3aed;
+  transform: scale(1.2);
+}
+.sp-dot--done {
+  background: #a78bfa;
+}
+
+/* ── Step wrapper ── */
+.sp-step {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  flex: 1;
-  min-width: 0; /* allow children to shrink properly */
 }
 
-/* top row: prices + discount */
-.subscription-top-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  width: 100%;
-}
-
-/* price group on left of top row */
-.subscription-price-section {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  overflow: hidden; /* prevent long names from pushing discount */
-  min-width: 0; /* CRITICAL to allow flex children to shrink */
-}
-
-/* plan name */
-.subscription-plan-name {
-  font-size: 1.05rem;
-  white-space: nowrap;
-  flex: 0 0 auto;
-}
-
-/* current price + old price */
-.subscription-price-now {
-  font-size: 1.05rem;
+/* ── Typography ── */
+.sp-title {
+  font-size: 1.375rem;
   font-weight: 700;
-  color: #fff;
-}
-
-.subscription-price-old {
-  font-size: 0.95rem;
-  color: #bbb;
-  text-decoration: line-through;
-  margin-left: 6px;
-  flex: 0 0 auto;
-}
-
-/* discount badge — fixed shrink/width behaviour */
-.subscription-discount {
-  background: #FF69B4;
-  color: #fff;
-  padding: 8px 10px;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 0.85rem;
-  white-space: nowrap;
-  flex-shrink: 0; /* prevent it from shrinking */
+  color: #111827;
   text-align: center;
-  min-width: 84px; /* consistent visual width, tweak if needed */
+  margin: 0 0 6px;
+}
+.sp-subtitle {
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-align: center;
+  margin: 0 0 20px;
 }
 
-/* description row under top-row */
-.subscription-plan-desc {
-  color: #cfcfcf;
-  font-size: 0.95rem;
-  margin-top: 4px;
-  text-align: center; /* center the description under the top row */
+/* ── Phone input ── */
+.sp-input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 1rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 10px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  color: #111827;
+  margin-bottom: 4px;
+}
+.sp-input:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+}
+.sp-input--error {
+  border-color: #ef4444;
+}
+.sp-input--error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+.sp-error {
+  font-size: 0.8rem;
+  color: #ef4444;
+  margin: 4px 0 12px;
 }
 
-/* invisible placeholder for weekly to match height (optional) */
-.subscription-plan-desc-placeholder {
-  height: 1.2rem; /* tweak if you need weekly box height to match monthly */
-  visibility: hidden;
+/* ── Primary CTA button ── */
+.sp-btn-primary {
+  display: block;
+  width: 100%;
+  padding: 13px;
+  margin-top: 16px;
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
+}
+.sp-btn-primary:hover  { transform: scale(1.04); box-shadow: 0 6px 20px rgba(124, 58, 237, 0.45); }
+.sp-btn-primary:active { transform: scale(0.96); }
+.sp-btn-primary--flex  { flex: 1; display: block; margin-top: 0; }
+
+/* ── Age verify step ── */
+.sp-age { }
+
+.sp-age-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  text-align: center;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+.sp-age-title span {
+  color: #7c3aed;
 }
 
-/* Form actions container */
-.subscription-form-actions {
+.sp-age-body {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 16px;
+  padding-right: 6px;
+  scrollbar-width: thin;
+  scrollbar-color: #a78bfa #f3f4f6;
+}
+.sp-age-body::-webkit-scrollbar       { width: 4px; }
+.sp-age-body::-webkit-scrollbar-track { background: #f3f4f6; border-radius: 2px; }
+.sp-age-body::-webkit-scrollbar-thumb { background: #a78bfa; border-radius: 2px; }
+
+.sp-age-body p {
+  font-size: 0.8rem;
+  color: #6b7280;
+  line-height: 1.55;
+  margin: 0 0 10px;
+}
+
+.sp-age-footer-text {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+/* ── Plan cards ── */
+.sp-plan {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: border-color 0.25s, background 0.25s, transform 0.2s;
+  box-sizing: border-box;
+}
+.sp-plan:hover {
+  border-color: #a78bfa;
+  transform: translateY(-1px);
+}
+.sp-plan--selected {
+  border-color: #7c3aed;
+  background: #f5f3ff;
+}
+
+.sp-plan-radio {
+  accent-color: #7c3aed;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.sp-plan-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+.sp-plan-name {
+  font-size: 0.975rem;
+  font-weight: 700;
+  color: #111827;
+}
+.sp-plan-desc {
+  font-size: 0.78rem;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+.sp-plan-pricing {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  flex-shrink: 0;
+}
+.sp-plan-price {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #7c3aed;
+}
+.sp-plan-original {
+  font-size: 0.78rem;
+  color: #9ca3af;
+  text-decoration: line-through;
+}
+.sp-plan-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #fff;
+  background: #16a34a;
+  padding: 2px 7px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+/* ── Form actions (back + submit) ── */
+.sp-actions {
   display: flex;
   gap: 10px;
-  margin-top: 15px;
-  width: 100%;
+  margin-top: 14px;
 }
-
-/* Back button */
-.subscription-back-btn {
-  padding: 10px 20px;
-  background: #333;
-  color: white;
-  border: 2px solid #666;
-  border-radius: 6px;
-  font-size: 1rem;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
-  flex: 1;
-}
-
-.subscription-back-btn:hover {
-  background: #444;
-  border-color: #888;
-}
-
-/* Submit button */
-.subscription-submit-btn {
-  padding: 10px 20px;
-  background: #FF69B4;
-  color: white;
+.sp-btn-back {
+  padding: 13px 18px;
+  background: #f3f4f6;
+  color: #374151;
+  font-size: 0.9rem;
+  font-weight: 600;
   border: none;
-  border-radius: 6px;
-  font-size: 1rem;
+  border-radius: 10px;
   cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
-  flex: 1;
+  transition: background 0.2s, transform 0.2s;
+  white-space: nowrap;
 }
+.sp-btn-back:hover  { background: #e5e7eb; transform: scale(1.03); }
+.sp-btn-back:active { transform: scale(0.97); }
 
-.subscription-submit-btn:hover {
-  background: #C71585;
-}
-
-/* Close button */
-.subscription-popup-close {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: transparent;
-  border: none;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-  z-index: 100001;
-  padding: 5px;
-  line-height: 1;
-}
-
-.subscription-popup-close:hover {
-  opacity: 0.7;
-}
-
-/* small screens: keep layout tidy */
+/* ── Mobile ── */
 @media (max-width: 480px) {
-  .subscription-plan-option {
-    padding: 10px;
-    gap: 10px;
-    min-height: auto;
+  .sp-card {
+    padding: 24px 20px;
+    border-radius: 16px;
   }
-  .subscription-plan-radio {
-    margin-top: 4px;
-  }
-  .subscription-discount {
-    padding: 6px 8px;
-    min-width: 68px;
-    font-size: 0.78rem;
-  }
-  .subscription-plan-desc {
-    font-size: 0.9rem;
-    padding-right: 6px;
-    padding-left: 6px;
-  }
+  .sp-title { font-size: 1.2rem; }
+  .sp-plan  { padding: 12px; }
+  .sp-plan-price { font-size: 1rem; }
 }

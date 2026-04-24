@@ -9,9 +9,9 @@ const HeroSlider = () => {
 
   // Video URLs for each slide
   const videoUrls = [
-    'https://vz-eb88fa42-751.b-cdn.net/09ff78a3-2382-4d2e-a399-9569eaec7b87/play_480p.mp4',
-    'https://vz-eb88fa42-751.b-cdn.net/1b1daffb-8c83-4cfc-8499-296f8d33ab82/play_480p.mp4',
-    'https://vz-eb88fa42-751.b-cdn.net/235e6265-0a6d-4368-88cc-d4b50d014dff/play_720p.mp4'
+    'https://vz-eb88fa42-751.b-cdn.net/09ff78a3-2382-4d2e-a399-9569eaec7b87/play_360p.mp4',
+    'https://vz-eb88fa42-751.b-cdn.net/1b1daffb-8c83-4cfc-8499-296f8d33ab82/play_360p.mp4',
+    'https://vz-eb88fa42-751.b-cdn.net/235e6265-0a6d-4368-88cc-d4b50d014dff/play_360p.mp4'
   ]
 
   // Custom Arrow Components with proper event handling
