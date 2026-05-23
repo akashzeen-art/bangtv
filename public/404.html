@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bang Tv</title>
     <script>
-      // GitHub Pages SPA fallback (one-shot redirect — avoids __gh_* query loops / 414)
+      // SPA fallback: GitHub Pages uses /bangtv; Vercel/Netlify use /
       (function () {
         var l = window.location;
-        var repoBase = '/bangtv';
+        var repoBase =
+          l.pathname.indexOf('/bangtv') === 0 ? '/bangtv' : '';
 
-        // Already bounced once; go to app root without re-encoding the URL
         if (l.search.indexOf('__gh_path__') !== -1) {
-          l.replace(repoBase + '/');
+          l.replace((repoBase || '') + '/');
           return;
         }
 
         sessionStorage.setItem('ghSpaRedirect', l.href);
-        l.replace(repoBase + '/');
+        l.replace((repoBase || '') + '/');
       })();
     </script>
   </head>
