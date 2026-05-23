@@ -1,14 +1,17 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// Use different base paths depending on where we deploy:
-// - GitHub Actions (GitHub Pages project site): /bangtv/
-// - Vercel / local dev / other hosts: /
+// Base path per host:
+// - GitHub Actions (project site): /bangtv/
+// - Vercel, demo.bangtv.world, local: /  (override with VITE_BASE_PATH if needed)
 const isGitHubPages = process.env.GITHUB_ACTIONS === 'true'
+const base =
+  process.env.VITE_BASE_PATH ||
+  (isGitHubPages ? '/bangtv/' : '/')
 
 export default defineConfig({
   plugins: [react()],
-  base: isGitHubPages ? '/bangtv/' : '/',
+  base,
   server: {
     port: 3000,
     open: true
