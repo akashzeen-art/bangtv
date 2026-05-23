@@ -25,8 +25,8 @@ const Refund = () => {
         </p>
         <p>
           To request a refund or cancellation, contact us at&nbsp;
-          <a href="mailto:info@nservetechnology.ae" className="static-page__link">
-            info@nservetechnology.ae
+          <a href="mailto:info@nservetechnology.com" className="static-page__link">
+            info@nservetechnology.com
           </a>
           &nbsp;with your mobile number, transaction details, and a short description of the issue.
         </p>

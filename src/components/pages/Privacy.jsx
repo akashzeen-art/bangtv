@@ -26,8 +26,8 @@ const Privacy = () => {
           We may collect information such as your contact details, device information and usage data to operate and improve
           the service, process subscriptions, prevent fraud and communicate with you. For any questions or data–related
           requests, you can contact us at&nbsp;
-          <a href="mailto:info@nservetechnology.ae" className="static-page__link">
-            info@nservetechnology.ae
+          <a href="mailto:info@nservetechnology.com" className="static-page__link">
+            info@nservetechnology.com
           </a>
           .
         </p>

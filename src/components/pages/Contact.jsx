@@ -24,8 +24,8 @@ const Contact = () => {
         </p>
         <p>
           📧 Email:&nbsp;
-          <a href="mailto:info@nservetechnology.ae" className="static-page__link">
-            info@nservetechnology.ae
+          <a href="mailto:info@nservetechnology.com" className="static-page__link">
+            info@nservetechnology.com
           </a>
           <br />
           nServe Technology LLC<br />
